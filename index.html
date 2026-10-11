@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alorma Impact Ventures — Orthopedic Mattress</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#04142e;--navy2:#082a56;--blue:#1c6ad4;--blue2:#3f8ae8;--gold:#d4af37;--gold2:#f0cf6b;--cream:#f5f8fc;--line:#e2e8f2;--line2:#d2dbea;--text:#12253d;--muted:#6b7f99;--ok:#0f8a5f;--danger:#cf4038;--r:16px;--sh:0 14px 38px rgba(4,20,46,.12);--shl:0 28px 66px rgba(4,20,46,.24)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+svg{display:block}
+.container{width:min(1200px,92%);margin:0 auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 22px;border-radius:999px;font-weight:700;font-size:.9rem;transition:.2s;border:1.5px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1e02;box-shadow:0 6px 18px rgba(212,175,55,.35)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(212,175,55,.45)}
+.btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 6px 18px rgba(28,106,212,.32)}
+.btn-blue:hover{transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line2);color:var(--navy);background:#fff}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+.btn-sm{padding:8px 15px;font-size:.8rem}
+.btn-full{width:100%}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important}
+
+/* Header */
+.top{background:var(--navy);color:#dce8f7;font-size:.8rem;text-align:center;padding:9px 15px}
+.top a{color:var(--gold2);font-weight:800}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hi{display:flex;align-items:center;gap:18px;height:74px}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.lm{width:44px;height:44px;border-radius:12px;overflow:hidden;background:linear-gradient(140deg,var(--navy),var(--blue2));color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:1.2rem;position:relative;flex:none}
+.lm img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.lt strong{display:block;font-size:1rem;font-weight:800;color:var(--navy);line-height:1.1}
+.lt small{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:700}
+nav{margin-left:auto;display:flex;gap:2px}
+nav a{padding:8px 14px;border-radius:999px;font-size:.87rem;font-weight:600;color:#34496a}
+nav a:hover{background:#eef3fb;color:var(--blue)}
+.cbtn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line2);background:#fff;position:relative;flex:none}
+.cbtn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.cbtn svg{width:18px;height:18px}
+.cc{position:absolute;top:-3px;right:-3px;min-width:20px;height:20px;padding:0 4px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1e02;border-radius:999px;font-size:.66rem;font-weight:800;display:none;place-items:center;border:2px solid #fff}
+.cc.show{display:grid}
+
+/* Hero */
+.hero{background:radial-gradient(1000px 500px at 85% -10%,rgba(212,175,55,.2),transparent 60%),linear-gradient(155deg,#04142e,#082a56 55%,#0d3a75);color:#fff;padding:70px 0 78px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.hin{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.kick{display:inline-block;padding:7px 15px;border-radius:999px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);color:var(--gold2);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(1.9rem,4.2vw,3.2rem);line-height:1.08;font-weight:800;letter-spacing:-.035em;margin:18px 0 16px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{color:#c2d6ee;max-width:50ch}
+.hcta{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+.himg{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,var(--navy),var(--blue));min-height:290px}
+.himg img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.1}
+.himg.logo-mode img{width:auto;height:auto;max-width:65%;max-height:65%;object-fit:contain;aspect-ratio:auto;filter:drop-shadow(0 12px 32px rgba(0,0,0,.35))}
+
+/* Section */
+.sec{padding:70px 0}
+.sec-w{background:#fff}
+.sh{max-width:640px;margin:0 auto 40px;text-align:center}
+.sh h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-.035em;color:var(--navy);margin:10px 0 12px}
+.sh p{color:var(--muted)}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+
+/* Toolbar */
+.tb{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:26px}
+.tb input{padding:11px 16px;border-radius:999px;border:1.5px solid var(--line2);outline:none;font-size:.88rem;min-width:220px;flex:1;max-width:340px}
+.tb input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(28,106,212,.12)}
+.fil{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:8px 15px;border-radius:999px;border:1.5px solid var(--line2);background:#fff;font-size:.82rem;font-weight:700;color:#4a5f7c;transition:.2s}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.on{background:linear-gradient(135deg,var(--blue),var(--blue2));border-color:var(--blue);color:#fff}
+
+/* Product grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:22px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+.cm{position:relative;background:#eef2f8;aspect-ratio:4/3;overflow:hidden}
+.cm .slide{position:absolute;inset:0;opacity:0;transition:opacity .6s;pointer-events:none}
+.cm .slide.on{opacity:1;pointer-events:auto}
+.cm .slide img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.snav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--navy);display:grid;place-items:center;border:0;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.15);opacity:0;transition:.2s;z-index:3}
+.cm:hover .snav{opacity:1}
+.snav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.snav.prev{left:8px}.snav.next{right:8px}
+.snav svg{width:15px;height:15px}
+.sdots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:3}
+.sdots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.2s}
+.sdots span.on{background:#fff;width:18px;border-radius:999px}
+.bdg{position:absolute;top:11px;left:11px;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1e02;font-size:.64rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;z-index:4}
+.stk{position:absolute;top:11px;right:11px;padding:5px 10px;border-radius:999px;background:rgba(4,20,46,.85);color:#fff;font-size:.64rem;font-weight:800;z-index:4}
+.stk.out{background:rgba(207,64,56,.95)}
+.cb{padding:18px;display:flex;flex-direction:column;flex:1;gap:8px}
+.ccat{font-size:.66rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--blue)}
+.cname{font-size:1rem;font-weight:800;color:var(--navy);line-height:1.3}
+.csz{font-size:.78rem;color:var(--muted)}
+.cds{font-size:.82rem;color:#5a6d84;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cf{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.pn{font-size:1.2rem;font-weight:800;color:var(--navy);display:block;letter-spacing:-.03em}
+.pw{font-size:.7rem;color:var(--muted)}
+.pw b{color:var(--ok);font-weight:800}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.wi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+.wn{width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;background:linear-gradient(140deg,var(--navy),var(--blue2));color:var(--gold);font-weight:800;font-size:.85rem}
+.wi strong{display:block;font-size:.92rem;font-weight:800;color:var(--navy)}
+.wi span{font-size:.83rem;color:var(--muted)}
+
+/* Reviews carousel */
+.rev-slider{position:relative;max-width:780px;margin:0 auto;overflow:hidden;padding:8px 0}
+.rev-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.rv-slide{flex:0 0 100%;padding:0 6px;box-sizing:border-box}
+.rv-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 4px 20px rgba(4,20,46,.04)}
+.rv-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.rv-av{width:60px;height:60px;border-radius:50%;object-fit:cover;background:linear-gradient(140deg,var(--navy),var(--blue2));color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:1.2rem;flex:none}
+.rv-head strong{display:block;font-size:.98rem;font-weight:800;color:var(--navy)}
+.rv-head .stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-top:2px}
+.rv-quote{font-size:.98rem;color:#4a5f76;line-height:1.75;font-style:italic}
+.rv-date{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:.75rem;color:var(--muted);font-weight:600}
+.rev-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(4,20,46,.08);z-index:5;transition:.2s}
+.rev-nav:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rev-nav svg{width:17px;height:17px}
+.rev-nav.prev{left:-8px}.rev-nav.next{right:-8px}
+.rev-dots{display:flex;justify-content:center;gap:6px;margin-top:22px}
+.rev-dots span{width:8px;height:8px;border-radius:50%;background:var(--line2);cursor:pointer;transition:.2s}
+.rev-dots span.on{background:var(--gold);width:24px;border-radius:999px}
+@media(max-width:840px){.rev-nav.prev{left:4px}.rev-nav.next{right:4px}.rev-nav{width:36px;height:36px}}
+
+/* Review form */
+.review-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 auto 30px;max-width:680px}
+.review-form h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.review-form > p{font-size:.83rem;color:var(--muted);margin-bottom:18px}
+.rv-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.rv-av-prev{width:56px;height:56px;border-radius:50%;flex:none;background:linear-gradient(140deg,var(--navy),var(--blue2));color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:1.1rem;overflow:hidden}
+.rv-av-prev img{width:100%;height:100%;object-fit:cover}
+.star-pick{display:flex;gap:5px;font-size:1.9rem;cursor:pointer;user-select:none;line-height:1}
+.star-pick span{color:var(--line2);transition:.15s}
+.star-pick span.on{color:var(--gold);transform:scale(1.05)}
+@media(max-width:560px){.rv-form-grid{grid-template-columns:1fr}}
+
+/* Contact */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.icard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.ic{width:42px;height:42px;border-radius:11px;background:#eef4fd;display:grid;place-items:center;flex:none;color:var(--blue)}
+.ic svg{width:19px;height:19px}
+.icard h4{font-size:.9rem;font-weight:800;color:var(--navy);margin-bottom:2px}
+.icard p,.icard a{font-size:.85rem;color:var(--muted)}
+.icard a{font-weight:600}
+.hours{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.hours h3{font-size:.98rem;font-weight:800;color:var(--navy);margin-bottom:14px}
+.hr{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:.86rem}
+.hr:last-child{border-bottom:0}
+.hr span{color:var(--muted);font-weight:600}
+.hr b{font-weight:800;color:var(--navy)}
+
+/* Footer */
+footer{background:var(--navy);color:#a2b8d4;padding:50px 0 0;position:relative}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue2),var(--gold),var(--blue2))}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:36px}
+.fg h5{color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+.fg li{margin-bottom:9px}
+.fg a{font-size:.85rem}
+.fg a:hover{color:var(--gold2)}
+.fb p{font-size:.84rem;margin:14px 0 16px;line-height:1.7;max-width:36ch}
+.socs{display:flex;gap:9px;flex-wrap:wrap}
+.soc{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#cfe0f5;transition:.2s}
+.soc:hover{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold);color:#2a1e02}
+.soc svg{width:17px;height:17px}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:#7c96b8;align-items:center}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:0;padding:0;cursor:pointer;transition:.3s;vertical-align:middle;margin-left:8px}
+.dot:hover{background:var(--gold);transform:scale(1.7);box-shadow:0 0 0 5px rgba(212,175,55,.22)}
+
+/* Cart */
+.bd{position:fixed;inset:0;background:rgba(4,20,46,.6);opacity:0;visibility:hidden;transition:.3s;z-index:90}
+.bd.on{opacity:1;visibility:visible}
+.dr{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:#fff;z-index:100;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s;box-shadow:-22px 0 55px rgba(4,20,46,.28)}
+.dr.on{transform:none}
+.dh{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.dh h3{font-size:1rem;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:9px}
+.dh h3 svg{width:17px;height:17px;color:var(--blue)}
+.x{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--muted)}
+.x:hover{background:#eef3fb;color:var(--navy)}
+.x svg{width:16px;height:16px}
+.db{flex:1;overflow-y:auto;padding:18px 22px}
+.ci{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ci:last-child{border-bottom:0}
+.ci img{width:66px;height:66px;border-radius:10px;object-fit:cover;background:#eef2f8;flex:none}
+.cib{flex:1;min-width:0}
+.cin{font-size:.86rem;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:2px}
+.cis{font-size:.72rem;color:var(--muted);margin-bottom:8px}
+.cir{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.qty{display:flex;align-items:center;gap:2px;border:1.5px solid var(--line2);border-radius:999px;padding:2px}
+.qty button{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:var(--navy);font-size:1rem;line-height:1}
+.qty button:hover{background:var(--blue);color:#fff}
+.qty span{min-width:22px;text-align:center;font-size:.8rem;font-weight:800}
+.cip{font-weight:800;color:var(--navy);font-size:.88rem}
+.rm{font-size:.7rem;color:var(--danger);font-weight:700;margin-top:5px}
+.rm:hover{text-decoration:underline}
+.df{border-top:1px solid var(--line);padding:18px 22px;background:#f9fbfe}
+.sr{display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:9px;color:var(--muted)}
+.sr.tot{font-size:1.1rem;font-weight:800;color:var(--navy);padding-top:12px;border-top:1px dashed var(--line2);margin-top:5px}
+.cempty{text-align:center;padding:55px 20px;color:var(--muted)}
+.cempty svg{width:44px;height:44px;margin:0 auto 14px;color:var(--line2)}
+.cempty h4{font-weight:800;color:var(--navy);margin-bottom:4px;font-size:.95rem}
+
+/* Modal */
+.mod{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:20px;background:rgba(4,20,46,.65);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);overflow-y:auto}
+.mod.on{display:grid}
+.mb{background:#fff;border-radius:18px;width:100%;max-width:500px;box-shadow:var(--shl);max-height:calc(100vh - 40px);display:flex;flex-direction:column}
+.mb.w{max-width:680px}
+.mh{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.mh h3{font-size:1.05rem;font-weight:800;color:var(--navy)}
+.mh p{font-size:.78rem;color:var(--muted);margin-top:2px}
+.mbody{padding:22px 24px;overflow-y:auto}
+.mf{padding:16px 24px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end;background:#f9fbfe;border-radius:0 0 18px 18px}
+
+/* Forms */
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:.76rem;font-weight:800;color:var(--navy);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line2);font-size:.86rem;outline:none;transition:.2s;font-family:inherit}
+.fld textarea{resize:vertical;min-height:70px;line-height:1.5}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(28,106,212,.12)}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.up{border:2px dashed var(--line2);border-radius:12px;padding:16px;text-align:center;cursor:pointer;transition:.2s;background:#f9fbfe;display:block}
+.up:hover{border-color:var(--blue);background:#f1f6fe}
+.up svg{width:22px;height:22px;color:var(--blue);margin:0 auto 6px}
+.up strong{display:block;font-size:.83rem;font-weight:800;color:var(--navy)}
+.up span{font-size:.73rem;color:var(--muted)}
+.up input{display:none}
+.pv{width:76px;height:76px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#eef2f8}
+.pvf{width:76px;height:76px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:1.4rem;color:var(--gold);background:linear-gradient(140deg,var(--navy),var(--blue2))}
+
+/* Product image grid in editor */
+#pImages{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:9px;margin-bottom:11px}
+.pimg-item{position:relative;border-radius:10px;overflow:hidden;border:2px solid var(--line);aspect-ratio:1;background:#eef2f8}
+.pimg-item.cover{border-color:var(--gold)}
+.pimg-item img{width:100%;height:100%;object-fit:cover}
+.pimg-item button{position:absolute;width:22px;height:22px;border-radius:50%;border:0;cursor:pointer;font-weight:800;display:grid;place-items:center;font-size:13px}
+.pimg-rm{top:4px;right:4px;background:rgba(207,64,56,.95);color:#fff}
+.pimg-cvr{top:4px;left:4px;background:rgba(4,20,46,.85);color:#fff;font-size:11px!important}
+.pimg-item.cover .pimg-cvr{background:var(--gold);color:#2a1e02}
+
+/* Toast */
+.tw{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:300;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.tst{background:var(--navy);color:#fff;padding:12px 20px;border-radius:999px;font-size:.83rem;font-weight:700;box-shadow:var(--shl);animation:tin .3s;max-width:90vw}
+.tst.ok{background:var(--ok)}
+.tst.err{background:var(--danger)}
+@keyframes tin{from{opacity:0;transform:translateY(14px)}to{opacity:1}}
+
+/* Login */
+.lw{position:fixed;inset:0;z-index:160;display:none;place-items:center;padding:20px;background:linear-gradient(152deg,#04142e,#0a2a56 62%,#0d3a75);overflow-y:auto}
+.lw.on{display:grid}
+.lb{background:#fff;border-radius:20px;padding:36px 30px;width:100%;max-width:390px;box-shadow:var(--shl);position:relative;z-index:2}
+.lb .lm{width:54px;height:54px;border-radius:15px;font-size:1.4rem;margin:0 auto 16px}
+.lb h2{text-align:center;font-size:1.3rem;font-weight:800;color:var(--navy);letter-spacing:-.03em}
+.lb > p{text-align:center;font-size:.82rem;color:var(--muted);margin:5px 0 22px}
+.lh{margin-top:14px;padding:11px 13px;background:#f1f6fe;border:1px dashed var(--line2);border-radius:10px;font-size:.74rem;color:var(--muted);text-align:center;line-height:1.6}
+.lh b{color:var(--navy)}
+.le{background:#fdf0ef;border:1px solid #f4cdc9;color:#a83228;font-size:.78rem;font-weight:700;padding:9px 13px;border-radius:9px;margin-bottom:14px;display:none;text-align:center}
+.le.on{display:block}
+.bk{position:absolute;top:22px;left:22px;color:#9db6d4;font-size:.8rem;font-weight:700;display:flex;align-items:center;gap:7px;z-index:5}
+.bk:hover{color:#fff}
+
+/* Admin */
+.ad{position:fixed;inset:0;background:#f1f5fa;z-index:150;display:none;overflow:hidden}
+.ad.on{display:block}
+.as{display:grid;grid-template-columns:230px 1fr;height:100%}
+.sd{background:var(--navy);color:#b3c8e0;display:flex;flex-direction:column;padding:20px 0;overflow-y:auto}
+.sbr{padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:16px}
+.sbr strong{color:#fff;display:block;font-size:.95rem;font-weight:800}
+.sbr span{font-size:.66rem;color:#7c96b8;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.snv{display:flex;flex-direction:column;gap:3px;padding:0 10px;flex:1}
+.snv button{text-align:left;padding:11px 14px;border-radius:10px;font-size:.84rem;font-weight:700;color:#a2b8d4;transition:.2s}
+.snv button:hover{background:rgba(255,255,255,.08);color:#fff}
+.snv button.on{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff}
+.sf{padding:16px 20px 0;border-top:1px solid rgba(255,255,255,.1);margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.sf button{padding:9px 13px;border-radius:9px;font-size:.8rem;font-weight:700;text-align:center;border:1px solid rgba(255,255,255,.15);color:#cfe0f5}
+.sf button:hover{background:rgba(255,255,255,.1)}
+.sf button.dg{border-color:rgba(207,64,56,.45);color:#f0a49e}
+.am{overflow-y:auto;padding:28px 32px 60px}
+.ap{display:none}
+.ap.on{display:block}
+.at{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.at h2{font-size:1.35rem;font-weight:800;color:var(--navy);letter-spacing:-.035em}
+.at p{font-size:.83rem;color:var(--muted);margin-top:2px}
+.stg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:24px}
+.st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.st .si{width:36px;height:36px;border-radius:10px;background:#eef4fd;display:grid;place-items:center;color:var(--blue);margin-bottom:10px}
+.st .si svg{width:17px;height:17px}
+.st strong{display:block;font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:-.04em;line-height:1.1}
+.st span{font-size:.76rem;color:var(--muted);font-weight:700}
+.pc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px}
+.pc h3{font-size:.96rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.pc .hint{font-size:.78rem;color:var(--muted);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);font-weight:800;padding:10px;border-bottom:1.5px solid var(--line)}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+.ti{width:46px;height:46px;border-radius:9px;object-fit:cover;background:#eef2f8}
+.tn{font-weight:800;color:var(--navy);line-height:1.3}
+.ts{font-size:.71rem;color:var(--muted)}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.65rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.pill.ok{background:#e2f6ec;color:#0e6e4a}
+.pill.warn{background:#fdf2dd;color:#8f6408}
+.pill.bad{background:#fbe5e3;color:#a83228}
+.ac{display:flex;gap:5px;justify-content:flex-end}
+.mn{width:31px;height:31px;border-radius:8px;display:grid;place-items:center;border:1.5px solid var(--line2);background:#fff;color:var(--muted)}
+.mn:hover{border-color:var(--blue);color:var(--blue);background:#f1f6fe}
+.mn.dg:hover{border-color:var(--danger);color:var(--danger);background:#fdf1f0}
+.mn svg{width:13px;height:13px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sg .full{grid-column:1/-1}
+
+/* Toggle switch */
+.sw{position:relative;display:inline-block;width:48px;height:28px;flex:none;cursor:pointer}
+.sw input{opacity:0;width:0;height:0}
+.sw .sl{position:absolute;inset:0;background:var(--line2);border-radius:999px;transition:.25s}
+.sw .sl:before{content:"";position:absolute;height:22px;width:22px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.25s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.sw input:checked + .sl{background:var(--ok)}
+.sw input:checked + .sl:before{transform:translateX(20px)}
+
+/* Lightbox */
+.lbx{position:fixed;inset:0;z-index:400;background:rgba(4,20,46,.96);display:none;align-items:center;justify-content:center;padding:20px}
+.lbx.on{display:flex}
+.lbx-wrap{position:relative;max-width:96vw;width:min(96vw,1200px)}
+.lbx-wrap > img{width:100%;height:auto;max-height:74vh;object-fit:contain;border-radius:14px;display:block;background:#0a1a30;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+.lbx-x{position:absolute;top:-46px;right:0;color:#fff;font-size:1.3rem;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.12);border:0;cursor:pointer}
+.lbx-x:hover{background:rgba(255,255,255,.25)}
+.lbx-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;display:grid;place-items:center;border:0;cursor:pointer;transition:.2s}
+.lbx-nav:hover{background:rgba(255,255,255,.3)}
+.lbx-nav svg{width:20px;height:20px}
+.lbx-nav.prev{left:-62px}.lbx-nav.next{right:-62px}
+.lbx-thumbs{position:absolute;bottom:-88px;left:50%;transform:translateX(-50%);display:flex;gap:8px;max-width:90vw;overflow-x:auto;padding:4px}
+.lbx-thumbs img{width:58px;height:58px;border-radius:8px;object-fit:cover;cursor:pointer;opacity:.5;transition:.2s;border:2px solid transparent;flex:none}
+.lbx-thumbs img.on{opacity:1;border-color:var(--gold)}
+@media(max-width:820px){.lbx-nav.prev{left:4px}.lbx-nav.next{right:4px}.lbx-thumbs{position:static;transform:none;margin-top:12px;justify-content:center}.lbx-wrap > img{max-height:60vh}}
+.rv-closed{background:#fdf2dd;border:1px solid #f0d98a;border-radius:12px;padding:14px 18px;color:#8f6408;font-weight:700;font-size:.87rem;text-align:center;max-width:640px;margin:0 auto 26px}
+
+/* Responsive */
+@media(max-width:1024px){.hin,.info{grid-template-columns:1fr;gap:36px}.fg{grid-template-columns:1fr 1fr;gap:28px}.as{grid-template-columns:1fr;grid-template-rows:auto 1fr}.sd{flex-direction:row;align-items:center;padding:10px;gap:10px;overflow-x:auto}.sbr{display:none}.snv{flex-direction:row;padding:0;gap:5px;overflow-x:auto;flex:1}.snv button{white-space:nowrap;padding:9px 12px;font-size:.78rem}.sf{flex-direction:row;padding:0;border:0;margin:0}.am{padding:20px 16px 50px}}
+@media(max-width:820px){nav{display:none}.sec{padding:50px 0}.sg,.r2{grid-template-columns:1fr}.fg{grid-template-columns:1fr;gap:24px}.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}.rv-card{padding:22px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:10px}.cb{padding:12px}.cname{font-size:.86rem}.cds{display:none}.pn{font-size:.98rem}.cf{flex-direction:column;align-items:stretch;gap:7px}.cf .btn{width:100%}.lt small{display:none}.hero h1{font-size:1.75rem}.rv-av{width:48px;height:48px;font-size:1rem}}
+</style>
+</head>
+<body id="top">
+
+<div class="top" id="topBar">Wholesale & Retail Orthopedic Mattress Dealer — Klagon NDC Junction · <a href="tel:0268508939">0268508939</a></div>
+
+<header>
+  <div class="container hi">
+    <a href="#top" class="logo">
+      <span class="lm" id="lm1">A</span>
+      <span class="lt"><strong id="bn">Alorma</strong><small id="bs">Impact Ventures</small></span>
+    </a>
+    <nav>
+      <a href="#products">Mattresses</a>
+      <a href="#why">Why Impact</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cbtn" id="openCart" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18.5" cy="20" r="1.4"/><path d="M2.5 3h2.2l2.4 12.1a1.6 1.6 0 0 0 1.6 1.3h9.4a1.6 1.6 0 0 0 1.6-1.3L21 7H6"/></svg>
+      <span class="cc" id="cc">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hin">
+    <div>
+      <span class="kick" id="hk">Orthopedic Mattress Specialists</span>
+      <h1 id="ht">Sleep Better.<br><em>Live Better.</em></h1>
+      <p id="hs">Alorma Impact Ventures is your trusted wholesale and retail orthopedic mattress dealer.</p>
+      <div class="hcta">
+        <a href="#products" class="btn btn-gold">Shop Mattresses</a>
+        <a href="#contact" class="btn btn-ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Visit Showroom</a>
+      </div>
+    </div>
+    <div class="himg" id="himgBox"><img id="himg" alt="Mattress"></div>
+  </div>
+</section>
+
+<section class="sec" id="products">
+  <div class="container">
+    <div class="sh">
+      <span class="eyebrow">Our Collection</span>
+      <h2>Orthopedic Mattresses Built For Your Body</h2>
+      <p>Every mattress is designed to support your spine, reduce pressure points and help you wake up pain-free.</p>
+    </div>
+    <div class="tb">
+      <input type="search" id="search" placeholder="Search mattresses…">
+      <div class="fil" id="filters"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="sec sec-w" id="why">
+  <div class="container">
+    <div class="sh">
+      <span class="eyebrow">The Difference</span>
+      <h2>Why Switch To An Impact Orthopedic Mattress?</h2>
+    </div>
+    <div class="why-grid" id="whyList"></div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="container">
+    <div class="sh">
+      <span class="eyebrow">Customer Stories</span>
+      <h2>What Our Customers Say</h2>
+      <p>Real reviews from real sleepers — verified by Alorma Impact Ventures.</p>
+    </div>
+    <div id="revFormWrap"></div>
+    <div class="rev-slider" id="revSlider">
+      <div class="rev-track" id="revTrack"></div>
+      <button class="rev-nav prev" id="revPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="rev-nav next" id="revNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="rev-dots" id="revDots"></div>
+  </div>
+</section>
+
+<section class="sec sec-w" id="contact">
+  <div class="container">
+    <div class="sh">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Visit Us Or Give Us A Call</h2>
+    </div>
+    <div class="info">
+      <div>
+        <div class="icard">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><h4>Call or WhatsApp</h4><p><a id="cp" href="tel:0268508939">0268508939</a></p></div>
+        </div>
+        <div class="icard">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><h4>Showroom</h4><p id="ca">Klagon NDC Junction, Accra, Ghana</p></div>
+        </div>
+        <div class="icard">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6 10-6"/></svg></span>
+          <div><h4>Email</h4><p><a id="ce" href="mailto:info@alormaimpact.com">info@alormaimpact.com</a></p></div>
+        </div>
+        <div class="icard">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></span>
+          <div style="flex:1"><h4>Follow Us</h4><div class="socs" id="socs" style="margin-top:8px"></div></div>
+        </div>
+      </div>
+      <div class="hours">
+        <h3>Working Hours</h3>
+        <div id="hours"></div>
+        <a class="btn btn-blue btn-full" style="margin-top:16px" href="tel:0268508939">Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div class="fb">
+        <div class="logo">
+          <span class="lm" id="lm2">A</span>
+          <span class="lt"><strong id="fb1">Alorma</strong><small id="fb2">Impact Ventures</small></span>
+        </div>
+        <p id="fab">Wholesale and retail orthopedic mattress dealer committed to helping you sleep better.</p>
+        <div class="socs" id="fsocs"></div>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul><li><a href="#products">All Mattresses</a></li><li><a href="#why">Why Impact</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul><li><a href="#contact">Working Hours</a></li><li><a href="#contact">Location</a></li><li><a href="#products">Bulk Orders</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a id="fp" href="tel:0268508939">0268508939</a></li>
+          <li><a id="fe" href="mailto:info@alormaimpact.com">info@alormaimpact.com</a></li>
+          <li><span id="fa" style="font-size:.84rem">Klagon NDC Junction, Accra</span></li>
+          <li><span style="font-size:.84rem">Mon–Fri 9am–5pm · Sat 9am–4pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© <span id="yr"></span> Alorma Impact Ventures. All rights reserved.</span>
+      <span>Wholesale & Retail Orthopedic Mattress Dealer
+        <button class="dot" id="dot" aria-label="Admin"></button>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="bd" id="bd"></div>
+<aside class="dr" id="dr">
+  <div class="dh">
+    <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18.5" cy="20" r="1.4"/><path d="M2.5 3h2.2l2.4 12.1a1.6 1.6 0 0 0 1.6 1.3h9.4a1.6 1.6 0 0 0 1.6-1.3L21 7H6"/></svg> Your Cart</h3>
+    <button class="x" id="cx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="db" id="cb"></div>
+  <div class="df" id="cf" style="display:none">
+    <div class="sr"><span>Subtotal</span><span id="sub">₵0.00</span></div>
+    <div class="sr"><span>Delivery</span><span>On confirmation</span></div>
+    <div class="sr tot"><span>Total</span><span id="tot">₵0.00</span></div>
+    <button class="btn btn-gold btn-full" id="co" style="margin-top:14px">Checkout</button>
+  </div>
+</aside>
+
+<div class="mod" id="modCo">
+  <div class="mb">
+    <div class="mh">
+      <div><h3>Complete Your Order</h3><p>We'll confirm on WhatsApp</p></div>
+      <button class="x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="mbody">
+      <div class="r2">
+        <div class="fld"><label>Full Name *</label><input id="c1" required></div>
+        <div class="fld"><label>Phone *</label><input id="c2" required></div>
+      </div>
+      <div class="fld"><label>Delivery Address *</label><input id="c3" required></div>
+      <div class="fld"><label>Notes</label><textarea id="c4"></textarea></div>
+    </div>
+    <div class="mf">
+      <button class="btn btn-ghost" data-close>Cancel</button>
+      <button class="btn btn-blue" id="place">Place Order</button>
+    </div>
+  </div>
+</div>
+
+<div class="lw" id="lw">
+  <button class="bk" id="bk">← Back to shop</button>
+  <div class="lb">
+    <span class="lm" id="lm3">A</span>
+    <h2>Admin Portal</h2>
+    <p>Sign in to manage your shop</p>
+    <div class="le" id="le">Incorrect username or password</div>
+    <form id="lf">
+      <div class="fld"><label>Username</label><input id="lu" required placeholder="admin" autocomplete="username"></div>
+      <div class="fld"><label>Password</label><input id="lp" type="password" required placeholder="••••••••" autocomplete="current-password"></div>
+      <button class="btn btn-blue btn-full" type="submit" style="margin-top:6px">Sign In</button>
+    </form>
+    <div class="lh">Default login — <b>admin</b> / <b>alorma2026</b></div>
+  </div>
+</div>
+
+<div class="ad" id="ad">
+  <div class="as">
+    <aside class="sd">
+      <div class="sbr"><strong>Alorma Admin</strong><span>Control Panel</span></div>
+      <nav class="snv" id="snv">
+        <button data-t="ov" class="on">Overview</button>
+        <button data-t="pr">Products</button>
+        <button data-t="cat">Categories</button>
+        <button data-t="rv">Reviews</button>
+        <button data-t="st">Settings</button>
+      </nav>
+      <div class="sf">
+        <button id="view">View Site</button>
+        <button id="out" class="dg">Log Out</button>
+      </div>
+    </aside>
+    <main class="am">
+      <section class="ap on" data-p="ov">
+        <div class="at">
+          <div><h2>Overview</h2><p>Snapshot of your shop</p></div>
+          <button class="btn btn-blue btn-sm" id="ap1">+ Add Product</button>
+        </div>
+        <div class="stg" id="stg"></div>
+        <div class="pc"><h3>Low Stock Alert</h3><p class="hint">Products with 3 units or fewer</p><div id="ls"></div></div>
+      </section>
+      <section class="ap" data-p="pr">
+        <div class="at">
+          <div><h2>Products</h2><p>Add, edit, price and remove mattresses</p></div>
+          <button class="btn btn-blue btn-sm" id="ap2">+ Add Product</button>
+        </div>
+        <div class="pc" style="padding:0;overflow:hidden"><div style="overflow-x:auto"><table id="pt"></table></div></div>
+      </section>
+      <section class="ap" data-p="cat">
+        <div class="at"><div><h2>Categories</h2><p>Add, rename, hide or delete product categories. Hidden categories won't appear in the shop filter.</p></div></div>
+        <div class="pc">
+          <h3>Add New Category</h3>
+          <p class="hint">Type a name and click Add. It will appear in the filter bar right away.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <input id="catNew" placeholder="e.g. Pillow Top, Premium, Firm" style="flex:1;min-width:220px;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line2);font-size:.86rem;outline:none">
+            <button class="btn btn-blue" id="catAddBtn">+ Add Category</button>
+          </div>
+        </div>
+        <div class="pc">
+          <h3>All Categories</h3>
+          <p class="hint">Use the switch to show / hide. Edit the name to rename (products auto-update). Click the trash icon to delete.</p>
+          <div id="catList"></div>
+        </div>
+      </section>
+      <section class="ap" data-p="rv">
+        <div class="at"><div><h2>Customer Reviews</h2><p>Manage reviews and control whether new ones can be submitted</p></div></div>
+        <div class="pc">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <div>
+              <h3 style="margin-bottom:4px">Accept New Reviews</h3>
+              <p style="font-size:.83rem;color:var(--muted);margin:0">Turn OFF to hide the review form on the website. Existing reviews stay visible.</p>
+            </div>
+            <label class="sw"><input type="checkbox" id="rvToggle"><span class="sl"></span></label>
+          </div>
+          <p id="rvStatus" style="margin-top:12px;font-size:.82rem;font-weight:700"></p>
+        </div>
+        <div class="at" style="margin-top:22px">
+          <div><h2 style="font-size:1.1rem">All Reviews</h2><p id="rvCount" style="font-size:.83rem;color:var(--muted)"></p></div>
+          <button class="btn btn-blue btn-sm" id="rvAddAdmin">+ Add Review Manually</button>
+        </div>
+        <div id="rvAdmin"></div>
+      </section>
+      <section class="ap" data-p="st">
+        <div class="at"><div><h2>Settings</h2><p>Logo, contact details, socials, login and backups</p></div></div>
+        <div class="pc">
+          <h3>Hero Image</h3>
+          <p class="hint">Large image shown on the homepage hero. If empty, your logo is shown instead.</p>
+          <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+            <div style="text-align:center">
+              <img id="hpv" class="pv" style="display:none;width:140px;height:100px;object-fit:cover">
+              <div id="hfb" class="pvf" style="width:140px;height:100px;font-size:.68rem;color:var(--muted);background:#eef2f8">Using logo</div>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <label class="up" for="hfile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg>
+                <strong>Upload Hero Image</strong><span>Recommended: 1200 × 900px</span>
+                <input type="file" id="hfile" accept="image/*">
+              </label>
+              <button class="btn btn-ghost btn-sm" id="rmHero" style="margin-top:10px;width:100%">Remove (use logo instead)</button>
+            </div>
+          </div>
+        </div>
+        <div class="pc">
+          <h3>Brand Logo</h3>
+          <p class="hint">Upload your company logo</p>
+          <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+            <div style="text-align:center">
+              <img id="lpv" class="pv" style="display:none">
+              <div id="lfb" class="pvf">A</div>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <label class="up" for="lfile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg>
+                <strong>Upload Logo</strong><span>PNG or JPG</span>
+                <input type="file" id="lfile" accept="image/*">
+              </label>
+              <button class="btn btn-ghost btn-sm" id="rmLogo" style="margin-top:10px;width:100%">Remove Logo</button>
+            </div>
+          </div>
+        </div>
+        <div class="pc">
+          <h3>Business Info</h3>
+          <div class="sg">
+            <div class="fld"><label>Brand Name</label><input id="sb"></div>
+            <div class="fld"><label>Subtitle</label><input id="ss"></div>
+            <div class="fld"><label>Phone</label><input id="sp"></div>
+            <div class="fld"><label>WhatsApp</label><input id="sw"></div>
+            <div class="fld"><label>Email</label><input id="se"></div>
+            <div class="fld"><label>Address</label><input id="sa"></div>
+            <div class="fld full"><label>Admin Username</label><input id="su"></div>
+            <div class="fld full"><label>Admin Password</label><input id="spw" type="text"></div>
+          </div>
+        </div>
+        <div class="pc">
+          <h3>Social Media Links</h3>
+          <p class="hint">Add or remove social handles. Icons appear on the website instantly. Leave the URL empty to temporarily hide a link.</p>
+          <div id="socEditor"></div>
+          <button class="btn btn-blue btn-sm" id="socAdd" style="margin-top:6px">+ Add Social Link</button>
+        </div>
+
+        <div class="pc">
+          <h3>Backup &amp; Restore</h3>
+          <p class="hint">Download a complete copy of your shop — products, images, reviews, categories, settings and socials — into a single file. Keep it safe. Use Import to restore everything at any time (e.g. on another device or after clearing your browser).</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+            <button class="btn btn-gold" id="backupExport">⬇ Download Backup</button>
+            <label class="btn btn-ghost" for="backupImport" style="cursor:pointer">⬆ Import Backup<input type="file" id="backupImport" accept=".json,application/json" style="display:none"></label>
+          </div>
+          <div id="storageBox" style="font-size:.82rem;color:var(--muted);background:#f9fbfe;border:1px dashed var(--line2);border-radius:10px;padding:12px 14px"></div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-blue" id="saveS">Save Settings</button>
+          <button class="btn btn-ghost" id="reset">Reset To Defaults</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div class="mod" id="modPr">
+  <div class="mb w">
+    <div class="mh">
+      <div><h3 id="pmT">Add Product</h3><p>Fill in the details</p></div>
+      <button class="x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="mbody">
+      <input type="hidden" id="pi">
+      <div class="fld"><label>Product Name *</label><input id="pn" required></div>
+      <div class="r2">
+        <div class="fld"><label>Category</label><input id="pcat" list="cls">
+          <datalist id="cls"></datalist>
+        </div>
+        <div class="fld"><label>Size</label><input id="psz"></div>
+      </div>
+      <div class="r2">
+        <div class="fld"><label>Retail Price (₵) *</label><input id="pp" type="number" min="0" step="0.01" required></div>
+        <div class="fld"><label>Wholesale (₵)</label><input id="pwh" type="number" min="0" step="0.01"></div>
+      </div>
+      <div class="r2">
+        <div class="fld"><label>Stock</label><input id="pst" type="number" min="0" step="1"></div>
+        <div class="fld"><label>Badge</label><input id="pb"></div>
+      </div>
+      <div class="fld"><label>Description</label><textarea id="pd"></textarea></div>
+      <div class="fld">
+        <label>Product Images <span style="font-weight:400;color:var(--muted)">(optional — first image is the cover, click ★ to make an image the cover)</span></label>
+        <div id="pImages"></div>
+        <label class="up" for="pfile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg>
+          <strong>Upload Image(s)</strong><span>Select one or several at once — optional</span>
+          <input type="file" id="pfile" accept="image/*" multiple>
+        </label>
+        <input id="pimg" placeholder="…or paste image URL and press Enter" style="margin-top:9px;width:100%;padding:10px 13px;border-radius:9px;border:1.5px solid var(--line2);font-size:.85rem;outline:none">
+        <small style="display:block;font-size:.73rem;color:var(--muted);margin-top:6px">If you don't add images, an auto-generated mattress illustration is used.</small>
+      </div>
+    </div>
+    <div class="mf">
+      <button class="btn btn-ghost" data-close>Cancel</button>
+      <button class="btn btn-blue" id="saveP">Save Product</button>
+    </div>
+  </div>
+</div>
+
+<div class="lbx" id="lbx">
+  <div class="lbx-wrap">
+    <button class="lbx-x" id="lbxX">✕</button>
+    <button class="lbx-nav prev" id="lbxP"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <img id="lbxImg" alt="">
+    <button class="lbx-nav next" id="lbxN"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="lbx-thumbs" id="lbxT"></div>
+  </div>
+</div>
+
+<div class="tw" id="tw"></div>
+
+<script>
+(function(){
+'use strict';
+
+/* ===== HELPERS ===== */
+function $(s){return document.querySelector(s);}
+function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function money(n){return '₵'+Number(n||0).toLocaleString('en-GH',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+
+/* ===== IMAGE RESIZE ===== */
+function resizeImg(file,maxSize,cb){
+  var r=new FileReader();
+  r.onload=function(e){
+    var img=new Image();
+    img.onload=function(){
+      var w=img.width,h=img.height,scale=1;
+      if(w>h&&w>maxSize)scale=maxSize/w;
+      else if(h>maxSize)scale=maxSize/h;
+      var c=document.createElement('canvas');
+      c.width=Math.round(w*scale);c.height=Math.round(h*scale);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      cb(c.toDataURL('image/jpeg',0.82));
+    };
+    img.src=e.target.result;
+  };
+  r.readAsDataURL(file);
+}
+
+/* ===== AUTO MATTRESS ART ===== */
+function art(name,v){
+  var s=0,str=String(name||'Impact');
+  for(var i=0;i<str.length;i++)s+=str.charCodeAt(i);
+  s+=(v||0);
+  var P=[['#04142e','#1352a8','#d4af37'],['#082a56','#1c6ad4','#f0cf6b'],['#0d3a75','#3f8ae8','#d4af37'],['#04142e','#1c6ad4','#b8912a']];
+  var p=P[s%P.length];
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="960" viewBox="0 0 640 480">'
+    +'<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+p[0]+'"/><stop offset="1" stop-color="'+p[1]+'"/></linearGradient>'
+    +'<linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#dbe5f2"/></linearGradient></defs>'
+    +'<rect width="640" height="480" fill="url(#a)"/>'
+    +'<circle cx="548" cy="78" r="152" fill="#fff" opacity=".06"/>'
+    +'<circle cx="78" cy="418" r="122" fill="'+p[2]+'" opacity=".16"/>'
+    +'<ellipse cx="320" cy="396" rx="236" ry="26" fill="#000" opacity=".3"/>'
+    +'<rect x="92" y="290" width="456" height="88" rx="15" fill="#6b7f99"/>'
+    +'<rect x="72" y="196" width="496" height="108" rx="23" fill="url(#b)"/>'
+    +'<rect x="72" y="266" width="496" height="17" rx="8" fill="'+p[2]+'"/>'
+    +'<g stroke="#c3d0e0" stroke-width="2" opacity=".75"><path d="M122 222h396"/><path d="M122 248h396"/></g>'
+    +'<rect x="126" y="142" width="182" height="76" rx="30" fill="#fff" opacity=".95"/>'
+    +'<rect x="332" y="142" width="182" height="76" rx="30" fill="#fff" opacity=".85"/>'
+    +'</svg>';
+  return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+}
+
+/* ===== DEFAULT DATA ===== */
+function def(){
+  return {
+    settings:{
+      brand:'Alorma',sub:'Impact Ventures',
+      phone:'0268508939',whatsapp:'233268508939',
+      email:'info@alormaimpact.com',
+      address:'Klagon NDC Junction, Accra, Ghana',
+      heroKicker:'Orthopedic Mattress Specialists',
+      heroTitle:'Sleep Better.<br><em>Live Better.</em>',
+      heroSub:'Alorma Impact Ventures is your trusted wholesale and retail orthopedic mattress dealer.',
+      footerAbout:'Wholesale and retail orthopedic mattress dealer committed to helping you sleep better.',
+      hours:[{l:'Monday – Friday',t:'9:00am – 5:00pm'},{l:'Saturday',t:'9:00am – 4:00pm'},{l:'Sunday',t:'Closed'}],
+      socials:[
+        {p:'facebook',u:'https://facebook.com/alormaimpact'},
+        {p:'instagram',u:'https://instagram.com/alormaimpact'},
+        {p:'tiktok',u:'https://tiktok.com/@alormaimpact'},
+        {p:'whatsapp',u:'https://wa.me/233268508939'}
+      ],
+      logo:null,heroImage:null,reviewsEnabled:true,
+      categories:[
+        {name:'Orthopedic',visible:true},
+        {name:'Memory Foam',visible:true},
+        {name:'Spring',visible:true},
+        {name:'Topper',visible:true},
+        {name:'Kids',visible:true}
+      ]
+    },
+    admin:{user:'admin',pass:'alorma2026'},
+    why:[
+      {t:'Relieves body pain',d:'Targeted support eases pressure on your back, waist and hips.'},
+      {t:'Gives you better posture',d:'Keeps your spine aligned for healthier posture.'},
+      {t:'Enjoy better sleep',d:'Deeper, uninterrupted rest so you wake refreshed.'},
+      {t:'Decreased tossing and turning',d:'Fewer position changes through the night.'},
+      {t:'Cost effective and long-lasting',d:'Durable construction delivers years of support.'}
+    ],
+    reviews:[
+      {id:uid(),name:'Kwame Asante',role:'Home Owner',rating:5,text:'I used to wake up with serious waist pain every morning. Three weeks on the Impact Deluxe and the pain is gone.',date:new Date(Date.now()-86400000*12).toISOString(),photo:null},
+      {id:uid(),name:'Ama Mensah',role:'Hotel Manager, Tema',rating:5,text:'We ordered 24 pieces for our guest house. Delivery was on time and the quality is excellent.',date:new Date(Date.now()-86400000*25).toISOString(),photo:null},
+      {id:uid(),name:'Esi Owusu',role:'Client',rating:5,text:'After my surgery the doctor said I needed firm support. The Medical Grade was perfect. I am sleeping through the night again.',date:new Date(Date.now()-86400000*40).toISOString(),photo:null}
+    ],
+    products:[
+      {id:uid(),name:'Impact Orthopedic Deluxe',cat:'Orthopedic',size:'6 × 6 × 10 in',price:1850,wh:1350,stock:24,badge:'Best Seller',desc:'Our flagship orthopedic mattress with high-density foam and reinforced lumbar zone.',images:[art('Deluxe',1),art('Deluxe',11),art('Deluxe',12)],img:art('Deluxe',1)},
+      {id:uid(),name:'Impact Orthopedic Standard',cat:'Orthopedic',size:'6 × 6 × 8 in',price:1250,wh:890,stock:36,badge:'',desc:'Reliable everyday orthopedic support at an accessible price.',images:[art('Std',2),art('Std',21)],img:art('Std',2)},
+      {id:uid(),name:'Impact Memory Foam Elite',cat:'Memory Foam',size:'6 × 6 × 12 in',price:2450,wh:1780,stock:15,badge:'Premium',desc:'Slow-response memory foam that contours to your body.',images:[art('Elite',3)],img:art('Elite',3)},
+      {id:uid(),name:'Impact Spring Support',cat:'Spring',size:'6 × 6 × 10 in',price:1650,wh:1180,stock:20,badge:'',desc:'Individually pocketed springs deliver responsive support.',images:[art('Spring',4)],img:art('Spring',4)},
+      {id:uid(),name:'Impact Medical Grade',cat:'Orthopedic',size:'6 × 6 × 10 in',price:2850,wh:2150,stock:10,badge:'Medical',desc:'Hospital-grade firmness designed for post-surgical recovery.',images:[art('Med',5)],img:art('Med',5)},
+      {id:uid(),name:'Impact Kids Orthopedic',cat:'Kids',size:'4 × 6 × 8 in',price:950,wh:690,stock:28,badge:'',desc:'Gentle but firm support for growing spines.',images:[art('Kids',6)],img:art('Kids',6)},
+      {id:uid(),name:'Impact Queen Premium',cat:'Orthopedic',size:'6 × 6.5 × 12 in',price:2650,wh:1980,stock:12,badge:'Queen',desc:'Extra width and depth for couples.',images:[art('Queen',7)],img:art('Queen',7)},
+      {id:uid(),name:'Impact Topper Pro',cat:'Topper',size:'6 × 6 × 4 in',price:680,wh:470,stock:40,badge:'Value',desc:'Upgrade any mattress instantly with orthopedic comfort.',images:[art('Top',8)],img:art('Top',8)}
+    ]
+  };
+}
+
+/* ===== STATE ===== */
+var S=null,cart=[],cat='All',q='';
+
+function load(){
+  try{
+    var r=localStorage.getItem('alorma_v9');
+    if(r){
+      var p=JSON.parse(r),d=def();
+      if(!p.settings) p.settings={};
+      if(!Array.isArray(p.settings.categories)){
+        var catSet={};
+        if(Array.isArray(p.products)) p.products.forEach(function(pr){ if(pr.cat) catSet[pr.cat]=true; });
+        var cats=[];
+        Object.keys(catSet).forEach(function(k){ cats.push({name:k,visible:true}); });
+        if(!cats.length) cats=d.settings.categories;
+        p.settings.categories=cats;
+      }
+      if(p.settings.socials&&!Array.isArray(p.settings.socials)){
+        var arr=[];
+        Object.keys(p.settings.socials).forEach(function(k){
+          if(p.settings.socials[k]) arr.push({p:k,u:p.settings.socials[k]});
+        });
+        p.settings.socials=arr;
+      }
+      S={
+        settings:Object.assign({},d.settings,p.settings||{}),
+        admin:Object.assign({},d.admin,p.admin||{}),
+        why:Array.isArray(p.why)?p.why:d.why,
+        reviews:Array.isArray(p.reviews)?p.reviews:d.reviews,
+        products:Array.isArray(p.products)?p.products:d.products
+      };
+    } else { S=def(); save(); }
+  }catch(e){ console.warn(e); S=def(); }
+  try{ cart=JSON.parse(localStorage.getItem('alorma_cart_v9')||'[]'); }catch(e){ cart=[]; }
+}
+function save(){ try{ localStorage.setItem('alorma_v9',JSON.stringify(S)); }catch(e){ console.warn('Storage full',e); } }
+function saveCart(){ try{ localStorage.setItem('alorma_cart_v9',JSON.stringify(cart)); }catch(e){} }
+
+/* ===== TOAST ===== */
+function toast(m,t){
+  var w=$('#tw'),e=document.createElement('div');
+  e.className='tst'+(t?' '+t:'');e.textContent=m;
+  w.appendChild(e);
+  setTimeout(function(){ e.style.transition='opacity .3s'; e.style.opacity='0'; setTimeout(function(){ e.remove(); },320); },2200);
+}
+
+/* ===== LOGO ===== */
+function renderLogo(){
+  var lg=S.settings.logo;
+  ['#lm1','#lm2','#lm3'].forEach(function(s){
+    var el=$(s);if(!el)return;
+    if(lg){ el.innerHTML='<img src="'+lg+'" alt="">'; }
+    else { el.innerHTML=''; el.textContent=(S.settings.brand||'A').charAt(0).toUpperCase(); }
+  });
+  var pv=$('#lpv'),fb=$('#lfb');
+  if(pv&&fb){
+    if(lg){ pv.src=lg; pv.style.display='block'; fb.style.display='none'; }
+    else { pv.style.display='none'; fb.style.display='grid'; fb.textContent=(S.settings.brand||'A').charAt(0).toUpperCase(); }
+  }
+}
+
+/* ===== APPLY SITE ===== */
+function applySite(){
+  var s=S.settings;
+  document.title=s.brand+' '+s.sub+' — Orthopedic Mattress';
+  $('#bn').textContent=s.brand;$('#bs').textContent=s.sub;
+  $('#fb1').textContent=s.brand;$('#fb2').textContent=s.sub;
+  $('#topBar').innerHTML=esc('Wholesale & Retail Orthopedic Mattress Dealer — Klagon NDC Junction')+' · <a href="tel:'+s.phone.replace(/\s/g,'')+'">'+esc(s.phone)+'</a>';
+  $('#hk').textContent=s.heroKicker;$('#ht').innerHTML=s.heroTitle;$('#hs').textContent=s.heroSub;
+  $('#fab').textContent=s.footerAbout;
+  $('#cp').textContent=s.phone;$('#cp').href='tel:'+s.phone.replace(/\s/g,'');
+  $('#ce').textContent=s.email;$('#ce').href='mailto:'+s.email;
+  $('#ca').textContent=s.address;
+  $('#fp').textContent=s.phone;$('#fp').href='tel:'+s.phone.replace(/\s/g,'');
+  $('#fe').textContent=s.email;$('#fe').href='mailto:'+s.email;
+  $('#fa').textContent=s.address;
+  $('#yr').textContent=new Date().getFullYear();
+  var hero=s.heroImage||s.logo||art('Hero',21);
+  $('#himg').src=hero;
+  $('#himgBox').classList.toggle('logo-mode',!s.heroImage&&!!s.logo);
+  renderLogo();renderHours();renderSocs();renderWhy();renderReviews();renderGrid();
+}
+function renderHours(){
+  $('#hours').innerHTML=S.settings.hours.map(function(h){
+    var c=/closed/i.test(h.t);
+    return '<div class="hr"><span>'+esc(h.l)+'</span><b style="'+(c?'color:#cf4038':'')+'">'+esc(h.t)+'</b></div>';
+  }).join('');
+}
+var ICO={
+  facebook:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>',
+  instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+  tiktok:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9.5a5.5 5.5 0 1 0 5 5.5V8.7a6.5 6.5 0 0 0 3.5 1V6.6a3.7 3.7 0 0 1-3.5-3.6V2z"/></svg>',
+  whatsapp:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-1-.3-2.4-1-3.7-2.3-1-1-1.7-2.2-1.9-2.6-.2-.4-.6-1.3-.6-2.4 0-1.1.6-1.7.8-1.9.2-.2.4-.3.6-.3h.4c.1 0 .3-.1.5.4l.7 1.7c.1.1.1.3 0 .4l-.2.4-.3.4c-.1.1-.3.3-.1.5.2.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5 0 .2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.5.7c.2.1.3.2.3.3 0 .2 0 .8-.3 1.4z"/></svg>',
+  twitter:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 3h3.3l-7.2 8.3L23.5 21h-6.6l-5.2-6.8L5.8 21H2.5l7.7-8.8L2 3h6.8l4.7 6.2L18.9 3z"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.4-5.2a3 3 0 0 0-2.1-2.1C18.8 4.3 12 4.3 12 4.3s-6.8 0-8.5.4a3 3 0 0 0-2.1 2.1C1 8.5 1 12 1 12s0 3.5.4 5.2a3 3 0 0 0 2.1 2.1c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a3 3 0 0 0 2.1-2.1C23 15.5 23 12 23 12zM9.8 15.5v-7l6 3.5z"/></svg>',
+  linkedin:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.3A1.8 1.8 0 1 1 6.5 4.7a1.8 1.8 0 0 1 0 3.6zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6S12.6 13 12.6 14.2V19h-3v-9h2.9v1.2h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7z"/></svg>',
+  snapchat:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c3 0 5.4 2.4 5.5 5.4v3.1c.6.3 1.4.4 2 .3.4 0 .7.3.6.7-.1.6-.8 1-1.5 1.3-.3.1-.4.3-.3.5.5 1.5 1.5 2.8 3 3.3.5.2.4.7-.1 1-.7.3-1.4.4-1.9.5-.2.6-.4 1.2-1.2 1.2-.6 0-1.2-.2-1.8-.2-1.4 0-2.2 1.5-4.3 1.5s-2.9-1.5-4.3-1.5c-.6 0-1.2.2-1.8.2-.8 0-1-.6-1.2-1.2-.5-.1-1.2-.2-1.9-.5-.5-.3-.6-.8-.1-1 1.5-.5 2.5-1.8 3-3.3.1-.2 0-.4-.3-.5-.7-.3-1.4-.7-1.5-1.3 0-.4.2-.7.6-.7.6.1 1.4 0 2-.3V7.4C6.6 4.4 9 2 12 2z"/></svg>',
+  telegram:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 3.5 2.5 11.2c-1.1.4-1.1 1.9 0 2.3l4.7 1.5 1.8 5.5c.3 1 1.6 1.2 2.2.4l2.6-3.1 4.8 3.5c.8.6 2 .2 2.2-.9L23.2 4.6c.2-1-.8-1.6-1.2-1.1zM9.3 14.1 17.5 8l-6.6 6.7-.3 3.5-1.3-4.1z"/></svg>',
+  pinterest:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.7 19.3c-.1-.8-.2-2 0-2.9l1.3-5.4s-.3-.7-.3-1.6c0-1.5.9-2.6 2-2.6.9 0 1.4.7 1.4 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.4-2 3.4-5 0-2.6-1.9-4.5-4.5-4.5-3.1 0-4.9 2.3-4.9 4.7 0 .9.3 1.9.8 2.5.1.1.1.2.1.3-.1.3-.2.9-.2 1-.1.3-.2.4-.5.2-1.4-.7-2.3-2.7-2.3-4.4 0-3.6 2.6-6.9 7.5-6.9 3.9 0 7 2.8 7 6.6 0 3.9-2.5 7.1-5.9 7.1-1.2 0-2.3-.6-2.6-1.3l-.7 2.7c-.3 1-1 2.3-1.5 3.1.9.3 1.9.4 2.9.4a10 10 0 0 0 0-20z"/></svg>',
+  threads:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.4 11.5c-.1-.1-.3-.1-.4-.2-.2-4-2.4-6.3-6.1-6.3-2.2 0-4 .9-5 2.5-.9 1.4-1.1 3.1-.5 4.6l1.8-.7c-.3-.9-.2-1.8.3-2.5.5-.8 1.6-1.3 3-1.3 2.4 0 3.6 1.4 3.8 3.9-.5-.2-1-.4-1.6-.5-.6-.1-1.2-.2-1.8-.1-1.9.2-3.2 1.2-3.4 2.6-.2 1.6 1 3 2.9 3.2 1.5.2 2.8-.2 3.7-1.1.7-.7 1.2-1.6 1.4-2.9.6.4 1 .9 1.2 1.6.2 1-.4 1.9-1.6 2.6-1.2.7-2.9 1-4.9.9-4.6-.3-7.5-3-7.8-7.4-.2-3.4 1.2-6.3 3.9-8 1.9-1.2 4.3-1.7 6.8-1.5 2.9.3 5.1 1.5 6.4 3.6.8 1.3 1.3 2.9 1.5 4.8l1.9-.4c-.3-2.2-.9-4.2-1.9-5.8-1.7-2.6-4.4-4.2-7.9-4.5-3-.3-5.8.3-8.1 1.8-2.3 1.5-3.6 3.7-3.9 6.3l-.1.5c-.2 3.5.7 6.7 2.6 9 1.9 2.2 4.6 3.5 7.7 3.7 2.3.2 4.4-.2 5.9-1.1 2-1.2 3-2.9 2.6-4.7-.3-1.4-1.2-2.5-2.6-3.2zM12 14.7c-1.1.1-2.2-.4-2.3-1.3-.1-.7.6-1.4 1.9-1.5.5-.1 1-.1 1.5 0 .5.1.9.2 1.3.4-.2 1.9-.8 2.3-2.4 2.4z"/></svg>',
+  website:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
+};
+var PLABEL={facebook:'Facebook',instagram:'Instagram',tiktok:'TikTok',whatsapp:'WhatsApp',twitter:'X (Twitter)',youtube:'YouTube',linkedin:'LinkedIn',snapchat:'Snapchat',telegram:'Telegram',pinterest:'Pinterest',threads:'Threads',website:'Website'};
+
+function renderSocs(){
+  var arr=S.settings.socials||[];
+  var h='';
+  arr.forEach(function(s){
+    if(!s.u) return;
+    var ico=ICO[s.p]||ICO.website;
+    h+='<a class="soc" href="'+esc(s.u)+'" target="_blank" rel="noopener" title="'+esc(PLABEL[s.p]||s.p)+'">'+ico+'</a>';
+  });
+  if(!h) h='<span style="font-size:.8rem;color:var(--muted)">No social links yet</span>';
+  $('#socs').innerHTML=h;$('#fsocs').innerHTML=h;
+}
+function renderWhy(){
+  $('#whyList').innerHTML=S.why.map(function(w,i){
+    return '<div class="wi"><span class="wn">'+(i+1)+'</span><div><strong>'+esc(w.t)+'</strong><span>'+esc(w.d)+'</span></div></div>';
+  }).join('');
+}
+
+/* ===== REVIEWS (infinite carousel + role + photo) ===== */
+var revIdx=0,revTimer=null,revTotal=0;
+
+function renderReviews(){
+  var on=S.settings.reviewsEnabled===undefined ? true : !!S.settings.reviewsEnabled;
+  if(on){
+    $('#revFormWrap').innerHTML='<div class="review-form">'
+      +'<h3>Leave a Review</h3><p>Your experience helps others sleep better.</p>'
+      +'<div class="rv-form-grid">'
+      +'<div class="fld"><label>Your Name *</label><input id="rvName" placeholder="e.g. Kofi Mensah"></div>'
+      +'<div class="fld"><label>Role / Company <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="rvRole" placeholder="e.g. Hotel Manager, Home Owner, Client"></div>'
+      +'</div>'
+      +'<div class="rv-form-grid">'
+      +'<div class="fld"><label>Your Photo <span style="font-weight:400;color:var(--muted)">(optional)</span></label>'
+      +'<div style="display:flex;gap:12px;align-items:center">'
+      +'<div class="rv-av-prev" id="rvAvPrev">?</div>'
+      +'<label class="up" for="rvPhoto" style="flex:1;padding:10px"><strong style="font-size:.78rem">Upload Photo</strong><span style="font-size:.68rem">Appears as your avatar</span><input type="file" id="rvPhoto" accept="image/*"></label>'
+      +'</div></div>'
+      +'<div class="fld"><label>Rating *</label><div class="star-pick" id="rvStars">'
+      +'<span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>'
+      +'</div></div>'
+      +'</div>'
+      +'<div class="fld"><label>Your Review *</label><textarea id="rvText" placeholder="Tell us about your experience…" style="min-height:90px"></textarea></div>'
+      +'<button class="btn btn-blue" id="rvSubmit">Submit Review</button>'
+      +'</div>';
+    window._rvRating=0;
+    window._rvPhoto=null;
+    $('#rvStars').addEventListener('click',function(e){
+      var t=e.target.closest('span');if(!t)return;
+      window._rvRating=+t.dataset.v;
+      $$('#rvStars span').forEach(function(s){ s.classList.toggle('on',+s.dataset.v<=window._rvRating); });
+    });
+    $('#rvPhoto').addEventListener('change',function(e){
+      var f=e.target.files[0];if(!f)return;
+      resizeImg(f,200,function(dataUrl){
+        window._rvPhoto=dataUrl;
+        $('#rvAvPrev').innerHTML='<img src="'+dataUrl+'" alt="">';
+      });
+    });
+    $('#rvSubmit').addEventListener('click',submitReview);
+  } else {
+    $('#revFormWrap').innerHTML='<div class="rv-closed">Reviews are currently closed. Thank you to everyone who shared their experience!</div>';
+  }
+
+  var list=S.reviews.slice().reverse();
+  if(!list.length){
+    $('#revTrack').innerHTML='<div class="rv-slide"><div class="rv-card" style="text-align:center;color:var(--muted);padding:50px 24px"><h3 style="color:var(--navy);margin-bottom:6px">No reviews yet</h3><p>Be the first to share your experience.</p></div></div>';
+    $('#revDots').innerHTML='';
+    $('#revPrev').style.display='none';
+    $('#revNext').style.display='none';
+    stopRevAuto();
+    revTotal=0;
+    return;
+  }
+
+  var buildSlide=function(r){
+    var stars='★'.repeat(r.rating)+'☆'.repeat(5-r.rating);
+    var initials=(r.name||'?').split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+    var av=r.photo?'<img class="rv-av" src="'+esc(r.photo)+'" alt="">':'<div class="rv-av">'+esc(initials)+'</div>';
+    var roleHtml=r.role?'<div style="font-size:.76rem;color:var(--muted);font-weight:600;margin-top:1px">'+esc(r.role)+'</div>':'';
+    return '<div class="rv-slide"><div class="rv-card">'
+      +'<div class="rv-head">'+av+'<div><strong>'+esc(r.name)+'</strong>'+roleHtml+'<div class="stars">'+stars+'</div></div></div>'
+      +'<div class="rv-quote">"'+esc(r.text)+'"</div>'
+      +'<div class="rv-date">'+new Date(r.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'</div>'
+      +'</div></div>';
+  };
+
+  var html=list.map(buildSlide).join('');
+  if(list.length>1) html+=buildSlide(list[0]);
+  $('#revTrack').innerHTML=html;
+  revTotal=list.length;
+  revIdx=0;
+  var track=$('#revTrack');
+  track.style.transition='none';
+  track.style.transform='translateX(0)';
+  void track.offsetWidth;
+  track.style.transition='transform .55s cubic-bezier(.4,0,.2,1)';
+  $('#revDots').innerHTML=list.map(function(_,i){return '<span class="'+(i===0?'on':'')+'" data-rv="'+i+'"></span>';}).join('');
+  var multi=list.length>1;
+  $('#revPrev').style.display=multi?'grid':'none';
+  $('#revNext').style.display=multi?'grid':'none';
+  if(multi) startRevAuto(); else stopRevAuto();
+}
+function showRevSlide(i,noAnim){
+  if(!revTotal) return;
+  var track=$('#revTrack');
+  if(i<0){
+    track.style.transition='none';
+    track.style.transform='translateX(-'+revTotal*100+'%)';
+    void track.offsetWidth;
+    track.style.transition='transform .55s cubic-bezier(.4,0,.2,1)';
+    revIdx=revTotal;
+    i=revTotal-1;
+  }
+  if(i>revTotal){
+    track.style.transition='none';
+    track.style.transform='translateX(0)';
+    void track.offsetWidth;
+    track.style.transition='transform .55s cubic-bezier(.4,0,.2,1)';
+    revIdx=0;
+    i=1;
+  }
+  revIdx=i;
+  if(noAnim){
+    track.style.transition='none';
+    void track.offsetWidth;
+    track.style.transition='transform .55s cubic-bezier(.4,0,.2,1)';
+  }
+  track.style.transform='translateX(-'+revIdx*100+'%)';
+  var real=revIdx%revTotal;
+  $$('#revDots span').forEach(function(d,k){ d.classList.toggle('on',k===real); });
+}
+document.addEventListener('transitionend',function(e){
+  if(e.target && e.target.id==='revTrack'){
+    if(revIdx===revTotal){
+      var track=$('#revTrack');
+      track.style.transition='none';
+      track.style.transform='translateX(0)';
+      void track.offsetWidth;
+      track.style.transition='transform .55s cubic-bezier(.4,0,.2,1)';
+      revIdx=0;
+    }
+  }
+});
+function startRevAuto(){
+  stopRevAuto();
+  revTimer=setInterval(function(){ if(revTotal>1) showRevSlide(revIdx+1); },3000);
+}
+function stopRevAuto(){ if(revTimer){ clearInterval(revTimer); revTimer=null; } }
+function submitReview(){
+  var n=$('#rvName').value.trim();
+  var role=$('#rvRole').value.trim();
+  var t=$('#rvText').value.trim();
+  if(!n)return toast('Please enter your name','err');
+  if(!window._rvRating)return toast('Please pick a star rating','err');
+  if(!t)return toast('Please write your review','err');
+  S.reviews.push({id:uid(),name:n,role:role||'',rating:window._rvRating,text:t,date:new Date().toISOString(),photo:window._rvPhoto||null});
+  try{ save(); }catch(e){ toast('Storage full — try a smaller photo','err'); return; }
+  renderReviews();
+  toast('Thank you for your review!','ok');
+}
+
+/* ===== CATEGORIES (public) ===== */
+function renderFilters(){
+  var list=['All'];
+  (S.settings.categories||[]).forEach(function(c){
+    if(c.visible!==false && list.indexOf(c.name)===-1) list.push(c.name);
+  });
+  if(cat!=='All'&&list.indexOf(cat)===-1) cat='All';
+  $('#filters').innerHTML=list.map(function(c){
+    return '<button class="chip'+(c===cat?' on':'')+'" data-cat="'+esc(c)+'">'+esc(c)+'</button>';
+  }).join('');
+}
+function renderCatDatalist(){
+  var dl=$('#cls'); if(!dl) return;
+  dl.innerHTML=(S.settings.categories||[]).map(function(c){return '<option value="'+esc(c.name)+'"></option>';}).join('');
+}
+
+/* ===== PRODUCTS GRID ===== */
+function prodImgs(p){
+  if(p.images&&p.images.length)return p.images;
+  if(p.img)return [p.img];
+  return [art(p.name)];
+}
+function renderGrid(){
+  renderFilters();
+  var list=S.products.slice();
+  if(cat!=='All')list=list.filter(function(p){return p.cat===cat;});
+  if(q){var lq=q.toLowerCase();list=list.filter(function(p){return (p.name+' '+(p.desc||'')+' '+(p.cat||'')).toLowerCase().indexOf(lq)!==-1;});}
+  if(!list.length){
+    $('#grid').innerHTML='<div class="empty"><h3 style="color:var(--navy);margin-bottom:5px">No products found</h3><p>Try a different search or category.</p></div>';
+    return;
+  }
+  $('#grid').innerHTML=list.map(function(p){
+    var out=p.stock<=0;
+    var imgs=prodImgs(p);
+    var slides=imgs.map(function(src,i){return '<div class="slide'+(i===0?' on':'')+'"><img src="'+esc(src)+'" alt="'+esc(p.name)+'" loading="lazy" data-open="'+esc(p.id)+'" data-idx="'+i+'"></div>';}).join('');
+    var dots=imgs.length>1?'<div class="sdots">'+imgs.map(function(_,i){return '<span class="'+(i===0?'on':'')+'" data-dot="'+i+'"></span>';}).join('')+'</div>':'';
+    var navs=imgs.length>1?'<button class="snav prev" data-nav="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="snav next" data-nav="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></button>':'';
+    return '<div class="card" data-pid="'+esc(p.id)+'">'
+      +'<div class="cm">'+slides+navs+dots
+      +(p.badge?'<span class="bdg">'+esc(p.badge)+'</span>':'')
+      +'<span class="stk'+(out?' out':'')+'">'+(out?'Out of stock':p.stock+' in stock')+'</span></div>'
+      +'<div class="cb"><span class="ccat">'+esc(p.cat||'Mattress')+'</span>'
+      +'<h3 class="cname">'+esc(p.name)+'</h3>'
+      +(p.size?'<span class="csz">'+esc(p.size)+'</span>':'')
+      +'<p class="cds">'+esc(p.desc||'')+'</p>'
+      +'<div class="cf"><div><span class="pn">'+money(p.price)+'</span>'
+      +(p.wh?'<span class="pw">Wholesale: <b>'+money(p.wh)+'</b></span>':'')
+      +'</div><button class="btn btn-blue btn-sm" data-add="'+esc(p.id)+'" '+(out?'disabled':'')+'>'+(out?'Sold Out':'Add')+'</button></div></div></div>';
+  }).join('');
+}
+
+/* Auto-rotate product carousels every 3s */
+setInterval(function(){
+  $$('.cm').forEach(function(cm){
+    var slides=cm.querySelectorAll('.slide');
+    if(slides.length<2)return;
+    var cur=0;
+    slides.forEach(function(s,i){ if(s.classList.contains('on'))cur=i; });
+    var next=(cur+1)%slides.length;
+    slides.forEach(function(s,i){ s.classList.toggle('on',i===next); });
+    var dots=cm.querySelectorAll('.sdots span');
+    dots.forEach(function(d,i){ d.classList.toggle('on',i===next); });
+  });
+},3000);
+
+/* ===== CART ===== */
+function updateCart(){
+  var n=cart.reduce(function(s,i){return s+i.qty;},0);
+  var cc=$('#cc');cc.textContent=n;cc.className='cc'+(n?' show':'');
+  if(!cart.length){
+    $('#cb').innerHTML='<div class="cempty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="20" r="1.4"/><circle cx="18.5" cy="20" r="1.4"/><path d="M2.5 3h2.2l2.4 12.1a1.6 1.6 0 0 0 1.6 1.3h9.4a1.6 1.6 0 0 0 1.6-1.3L21 7H6"/></svg><h4>Your cart is empty</h4><p>Add a mattress to get started.</p></div>';
+    $('#cf').style.display='none';return;
+  }
+  $('#cb').innerHTML=cart.map(function(it){
+    return '<div class="ci"><img src="'+esc(it.img||art(it.name))+'" alt="">'
+      +'<div class="cib"><div class="cin">'+esc(it.name)+'</div>'
+      +(it.size?'<div class="cis">'+esc(it.size)+'</div>':'')
+      +'<div class="cir"><div class="qty"><button data-q="d" data-i="'+esc(it.id)+'">−</button><span>'+it.qty+'</span><button data-q="i" data-i="'+esc(it.id)+'">+</button></div>'
+      +'<span class="cip">'+money(it.price*it.qty)+'</span></div>'
+      +'<button class="rm" data-q="r" data-i="'+esc(it.id)+'">Remove</button>'
+      +'</div></div>';
+  }).join('');
+  var t=cart.reduce(function(s,i){return s+i.price*i.qty;},0);
+  $('#sub').textContent=money(t);$('#tot').textContent=money(t);
+  $('#cf').style.display='block';
+}
+function addCart(id){
+  var p=S.products.find(function(x){return x.id===id;});
+  if(!p)return toast('Not found','err');
+  if(p.stock<=0)return toast('Out of stock','err');
+  var e=cart.find(function(x){return x.id===id;});
+  if(e){if(e.qty>=p.stock)return toast('Not enough stock','err');e.qty++;}
+  else cart.push({id:p.id,name:p.name,size:p.size,price:p.price,img:(p.images&&p.images[0])||p.img||art(p.name),qty:1});
+  saveCart();updateCart();toast(p.name+' added','ok');
+}
+function chQty(id,a){
+  var i=cart.findIndex(function(x){return x.id===id;});if(i<0)return;
+  if(a==='r')cart.splice(i,1);
+  else if(a==='i'){var p=S.products.find(function(x){return x.id===id;});if(p&&cart[i].qty>=p.stock)return toast('Not enough stock','err');cart[i].qty++;}
+  else if(a==='d'){cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1);}
+  saveCart();updateCart();
+}
+
+/* ===== END OF PART A ===== */
+/* ===== PART B CONTINUES BELOW ===== *//* ========== ADMIN AUTH ========== */
+function showLogin(){ $('#lw').classList.add('on'); document.body.classList.add('lock'); setTimeout(function(){ $('#lu').focus(); },150); }
+function hideLogin(){ $('#lw').classList.remove('on'); document.body.classList.remove('lock'); $('#le').classList.remove('on'); $('#lu').value=''; $('#lp').value=''; }
+function showAdmin(){ $('#ad').classList.add('on'); document.body.classList.add('lock'); refresh(); }
+function hideAdmin(){ $('#ad').classList.remove('on'); document.body.classList.remove('lock'); }
+
+function handleLogin(e){
+  e.preventDefault();
+  var u=$('#lu').value.trim(),p=$('#lp').value;
+  var eu=S.admin.user||'admin',ep=S.admin.pass||'alorma2026';
+  if(u===eu&&p===ep){ hideLogin(); showAdmin(); toast('Welcome back, admin!','ok'); }
+  else { $('#le').classList.add('on'); $('#lp').value=''; $('#lp').focus(); }
+}
+
+/* ========== ADMIN REFRESH ========== */
+function refresh(){
+  var ts=S.products.reduce(function(s,p){return s+(p.stock||0);},0);
+  var tv=S.products.reduce(function(s,p){return s+(p.price||0)*(p.stock||0);},0);
+  $('#stg').innerHTML=''
+    +'<div class="st"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 9 12 3l9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 21v-8h6v8"/></svg></div><strong>'+S.products.length+'</strong><span>Products</span></div>'
+    +'<div class="st"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 7 9 18l-5-5"/></svg></div><strong>'+ts+'</strong><span>Units</span></div>'
+    +'<div class="st"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><strong>'+money(tv)+'</strong><span>Value</span></div>'
+    +'<div class="st"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div><strong>'+S.reviews.length+'</strong><span>Reviews</span></div>';
+  var low=S.products.filter(function(p){return (p.stock||0)<=3;});
+  $('#ls').innerHTML=low.length?low.map(function(p){
+    return '<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)"><span style="font-weight:700;color:var(--navy)">'+esc(p.name)+'</span><span class="pill '+(p.stock===0?'bad':'warn')+'">'+p.stock+' left</span></div>';
+  }).join(''):'<p style="color:var(--muted);font-size:.83rem">All products have healthy stock.</p>';
+  if(!S.products.length) $('#pt').innerHTML='<tr><td style="text-align:center;padding:40px;color:var(--muted)">No products yet.</td></tr>';
+  else $('#pt').innerHTML='<thead><tr><th>Product</th><th>Category</th><th>Retail</th><th>Wholesale</th><th>Stock</th><th style="text-align:right">Actions</th></tr></thead><tbody>'
+    +S.products.map(function(p){
+      var c=p.stock===0?'bad':(p.stock<=3?'warn':'ok');
+      var thumb=(p.images&&p.images[0])||p.img||art(p.name);
+      return '<tr><td><div style="display:flex;gap:10px;align-items:center"><img class="ti" src="'+esc(thumb)+'" alt=""><div><div class="tn">'+esc(p.name)+'</div>'+(p.size?'<div class="ts">'+esc(p.size)+'</div>':'')+'</div></div></td>'
+        +'<td><span class="pill">'+esc(p.cat||'—')+'</span></td>'
+        +'<td><b>'+money(p.price)+'</b></td>'
+        +'<td>'+(p.wh?money(p.wh):'—')+'</td>'
+        +'<td><span class="pill '+c+'">'+p.stock+'</span></td>'
+        +'<td><div class="ac"><button class="mn" data-edit="'+esc(p.id)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>'
+        +'<button class="mn dg" data-del="'+esc(p.id)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>';
+    }).join('')+'</tbody>';
+  var s=S.settings;
+  $('#sb').value=s.brand;$('#ss').value=s.sub;$('#sp').value=s.phone;$('#sw').value=s.whatsapp;$('#se').value=s.email;$('#sa').value=s.address;
+  $('#su').value=S.admin.user;$('#spw').value=S.admin.pass;
+  var hp=$('#hpv'),hf=$('#hfb');
+  if(hp&&hf){
+    if(s.heroImage){ hp.src=s.heroImage; hp.style.display='block'; hf.style.display='none'; }
+    else { hp.style.display='none'; hf.style.display='grid'; }
+  }
+  renderLogo();
+  refreshReviewsAdmin();
+  renderSocialsEditor();
+  renderCategoriesAdmin();
+  renderCatDatalist();
+  updateStorageBox();
+}
+
+/* ========== CATEGORIES ADMIN ========== */
+function renderCategoriesAdmin(){
+  var cats=S.settings.categories||[];
+  if(!cats.length){
+    $('#catList').innerHTML='<div style="padding:20px;text-align:center;color:var(--muted);font-size:.85rem">No categories yet. Add one above.</div>';
+    return;
+  }
+  var counts={};
+  S.products.forEach(function(p){ if(p.cat){ counts[p.cat]=(counts[p.cat]||0)+1; } });
+  $('#catList').innerHTML=cats.map(function(c,i){
+    var n=counts[c.name]||0;
+    return '<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)">'
+      +'<label class="sw" title="'+(c.visible!==false?'Visible':'Hidden')+'"><input type="checkbox" data-cat-vis="'+i+'"'+(c.visible!==false?' checked':'')+'><span class="sl"></span></label>'
+      +'<input data-cat-name="'+i+'" value="'+esc(c.name)+'" style="flex:1;padding:9px 12px;border-radius:9px;border:1.5px solid var(--line2);font-size:.86rem;font-weight:700;outline:none;min-width:0">'
+      +'<span style="font-size:.75rem;color:var(--muted);font-weight:700;white-space:nowrap">'+n+' product'+(n===1?'':'s')+'</span>'
+      +'<button class="mn dg" data-cat-del="'+i+'" title="Delete" style="width:34px;height:34px;flex:none;border-radius:9px;display:grid;place-items:center;border:1.5px solid var(--line2);background:#fff;color:var(--muted);cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button>'
+      +'</div>';
+  }).join('');
+}
+
+/* ========== SOCIALS EDITOR ========== */
+function renderSocialsEditor(){
+  var arr=S.settings.socials||[];
+  if(!arr.length){
+    $('#socEditor').innerHTML='<div style="padding:16px;text-align:center;background:#f9fbfe;border:1px dashed var(--line2);border-radius:10px;color:var(--muted);font-size:.83rem;margin-bottom:12px">No social links yet. Click "+ Add Social Link" to start.</div>';
+    return;
+  }
+  $('#socEditor').innerHTML=arr.map(function(s,i){
+    var opts=Object.keys(PLABEL).map(function(k){return '<option value="'+k+'"'+(s.p===k?' selected':'')+'>'+PLABEL[k]+'</option>';}).join('');
+    return '<div style="display:flex;gap:9px;margin-bottom:9px;align-items:center">'
+      +'<select data-soc-p="'+i+'" style="flex:0 0 150px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line2);font-size:.85rem;font-weight:700;background:#fff;outline:none;cursor:pointer">'+opts+'</select>'
+      +'<input data-soc-u="'+i+'" value="'+esc(s.u||'')+'" placeholder="https://..." style="flex:1;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line2);font-size:.85rem;outline:none;min-width:0">'
+      +'<button class="mn dg" data-soc-del="'+i+'" title="Delete" style="width:38px;height:38px;flex:none;border-radius:9px;display:grid;place-items:center;border:1.5px solid var(--line2);background:#fff;color:var(--muted);cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button>'
+      +'</div>';
+  }).join('');
+}
+
+/* ========== REVIEWS ADMIN ========== */
+function refreshReviewsAdmin(){
+  var on=S.settings.reviewsEnabled!==false;
+  $('#rvToggle').checked=on;
+  $('#rvStatus').innerHTML=on
+    ? '<span style="color:var(--ok)">● Currently accepting new reviews</span>'
+    : '<span style="color:#a83228">● New reviews are turned OFF</span>';
+  $('#rvCount').textContent=S.reviews.length+' review'+(S.reviews.length===1?'':'s');
+  if(!S.reviews.length){ $('#rvAdmin').innerHTML='<div class="pc" style="text-align:center;color:var(--muted)">No reviews yet.</div>'; return; }
+  $('#rvAdmin').innerHTML=S.reviews.slice().reverse().map(function(r){
+    var initials=(r.name||'?').split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+    var av=r.photo
+      ? '<img src="'+esc(r.photo)+'" style="width:54px;height:54px;border-radius:50%;object-fit:cover;flex:none">'
+      : '<div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(140deg,var(--navy),var(--blue2));color:var(--gold);display:grid;place-items:center;font-weight:800;flex:none">'+esc(initials)+'</div>';
+    return '<div class="pc" style="padding:18px">'
+      +'<div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:12px">'
+      +av
+      +'<div style="flex:1;min-width:0">'
+      +'<div class="r2" style="margin-bottom:8px">'
+      +'<div class="fld" style="margin:0"><label style="font-size:.72rem">Name</label><input data-rvn="'+esc(r.id)+'" value="'+esc(r.name)+'" style="padding:8px 11px;font-size:.83rem"></div>'
+      +'<div class="fld" style="margin:0"><label style="font-size:.72rem">Role / Company</label><input data-rvro="'+esc(r.id)+'" value="'+esc(r.role||'')+'" placeholder="e.g. Hotel Manager" style="padding:8px 11px;font-size:.83rem"></div>'
+      +'</div>'
+      +'<div class="fld" style="margin:0 0 8px"><label style="font-size:.72rem">Rating (1–5)</label><input type="number" min="1" max="5" data-rvr="'+esc(r.id)+'" value="'+r.rating+'" style="padding:8px 11px;font-size:.83rem"></div>'
+      +'<div class="fld" style="margin:0 0 8px"><label style="font-size:.72rem">Review Text</label><textarea data-rvt="'+esc(r.id)+'" style="padding:8px 11px;font-size:.83rem;min-height:60px">'+esc(r.text)+'</textarea></div>'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">'
+      +'<span style="font-size:.73rem;color:var(--muted)">'+new Date(r.date).toLocaleString()+'</span>'
+      +'<button class="btn btn-ghost btn-sm" data-rvd="'+esc(r.id)+'" style="color:var(--danger);border-color:#f4cdc9">Delete</button>'
+      +'</div>'
+      +'</div></div></div>';
+  }).join('');
+  $('#rvAdmin').oninput=function(e){
+    var t=e.target;
+    var id=t.dataset.rvn||t.dataset.rvro||t.dataset.rvr||t.dataset.rvt;
+    if(!id)return;
+    var r=S.reviews.find(function(x){return x.id===id;});if(!r)return;
+    if(t.dataset.rvn) r.name=t.value;
+    if(t.dataset.rvro) r.role=t.value;
+    if(t.dataset.rvr) r.rating=Math.max(1,Math.min(5,parseInt(t.value,10)||5));
+    if(t.dataset.rvt) r.text=t.value;
+    save();renderReviews();
+  };
+  $('#rvAdmin').onclick=function(e){
+    var d=e.target.closest('[data-rvd]');if(!d)return;
+    if(!confirm('Delete this review?'))return;
+    S.reviews=S.reviews.filter(function(x){return x.id!==d.dataset.rvd;});
+    save();renderReviews();refreshReviewsAdmin();toast('Review deleted','ok');
+  };
+}
+
+/* ========== PRODUCT EDITOR ========== */
+var _pImgs=[];
+function renderPImgs(){
+  if(!_pImgs.length){
+    $('#pImages').innerHTML='<div style="grid-column:1/-1;text-align:center;padding:14px;background:#f9fbfe;border:1px dashed var(--line2);border-radius:10px;color:var(--muted);font-size:.82rem">No images yet — upload or paste a URL below</div>';
+    return;
+  }
+  $('#pImages').innerHTML=_pImgs.map(function(src,i){
+    return '<div class="pimg-item'+(i===0?' cover':'')+'">'
+      +'<img src="'+esc(src)+'" alt="">'
+      +'<button type="button" class="pimg-rm" data-rmi="'+i+'">×</button>'
+      +'<button type="button" class="pimg-cvr" data-cvr="'+i+'">★</button>'
+      +'</div>';
+  }).join('');
+}
+function openProd(id){
+  var p=id?S.products.find(function(x){return x.id===id;}):null;
+  $('#pmT').textContent=p?'Edit Product':'Add Product';
+  $('#pi').value=p?p.id:'';
+  $('#pn').value=p?p.name:'';
+  $('#pcat').value=p?(p.cat||''):'';
+  $('#psz').value=p?(p.size||''):'';
+  $('#pp').value=p?p.price:'';
+  $('#pwh').value=p?(p.wh||''):'';
+  $('#pst').value=p?p.stock:10;
+  $('#pb').value=p?(p.badge||''):'';
+  $('#pd').value=p?(p.desc||''):'';
+  $('#pimg').value='';
+  _pImgs = p ? ((p.images&&p.images.length)?p.images.slice():(p.img?[p.img]:[])) : [];
+  renderPImgs();
+  renderCatDatalist();
+  $('#modPr').classList.add('on');
+}
+function closeProd(){ $('#modPr').classList.remove('on'); }
+function saveProd(){
+  var n=$('#pn').value.trim(),pr=parseFloat($('#pp').value);
+  if(!n)return toast('Name required','err');
+  if(isNaN(pr))return toast('Price required','err');
+  var id=$('#pi').value;
+  var imgs=_pImgs.slice();
+  var cover = imgs.length ? imgs[0] : art(n);
+  var d={
+    name:n,
+    cat:$('#pcat').value.trim()||'Orthopedic',
+    size:$('#psz').value.trim(),
+    price:pr,
+    wh:parseFloat($('#pwh').value)||0,
+    stock:parseInt($('#pst').value,10)||0,
+    badge:$('#pb').value.trim(),
+    desc:$('#pd').value.trim(),
+    images:imgs.length?imgs:[cover],
+    img:cover
+  };
+  if(d.cat){
+    S.settings.categories=S.settings.categories||[];
+    var exists=S.settings.categories.find(function(c){return c.name===d.cat;});
+    if(!exists) S.settings.categories.push({name:d.cat,visible:true});
+  }
+  if(id){ var i=S.products.findIndex(function(x){return x.id===id;}); d.id=id; S.products[i]=d; toast('Product updated','ok'); }
+  else { d.id=uid(); S.products.push(d); toast('Product added','ok'); }
+  try{ save(); }catch(e){ toast('Storage full — try smaller images','err'); return; }
+  closeProd(); renderGrid(); refresh(); applySite();
+}
+
+/* ========== LIGHTBOX ========== */
+var _lb={imgs:[],i:0};
+function openLbx(p,idx){
+  _lb.imgs=prodImgs(p);
+  _lb.i=idx||0;
+  updateLbx();
+  $('#lbx').classList.add('on');
+}
+function updateLbx(){
+  $('#lbxImg').src=_lb.imgs[_lb.i];
+  $('#lbxT').innerHTML=_lb.imgs.map(function(s,i){return '<img src="'+esc(s)+'" class="'+(i===_lb.i?'on':'')+'" data-t="'+i+'">';}).join('');
+}
+function closeLbx(){ $('#lbx').classList.remove('on'); }
+function navLbx(d){ _lb.i=(_lb.i+d+_lb.imgs.length)%_lb.imgs.length; updateLbx(); }
+
+/* ========== ORDER ========== */
+function placeOrder(){
+  var n=$('#c1').value.trim(),ph=$('#c2').value.trim(),ad=$('#c3').value.trim();
+  if(!n||!ph||!ad)return toast('Fill name, phone, address','err');
+  if(!cart.length)return toast('Cart empty','err');
+  var t=cart.reduce(function(s,i){return s+i.price*i.qty;},0);
+  var msg='New Order - Alorma Impact Ventures\n\nName: '+n+'\nPhone: '+ph+'\nAddress: '+ad+'\n\nItems:\n';
+  cart.forEach(function(i){ msg+='- '+i.name+' x'+i.qty+' = '+money(i.price*i.qty)+'\n'; });
+  msg+='\nTotal: '+money(t);
+  if($('#c4').value.trim()) msg+='\n\nNotes: '+$('#c4').value.trim();
+  var wa=(S.settings.whatsapp||'').replace(/[^0-9]/g,'');
+  if(wa.indexOf('0')===0) wa='233'+wa.slice(1);
+  cart.forEach(function(item){
+    var p=S.products.find(function(x){return x.id===item.id;});
+    if(p) p.stock=Math.max(0,p.stock-item.qty);
+  });
+  save(); cart=[]; saveCart(); updateCart();
+  $('#modCo').classList.remove('on');
+  $('#dr').classList.remove('on');
+  $('#bd').classList.remove('on');
+  document.body.classList.remove('lock');
+  toast('Order placed! Opening WhatsApp…','ok');
+  setTimeout(function(){ window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(msg),'_blank'); },700);
+  renderGrid();
+}
+
+/* ========== BACKUP / RESTORE ========== */
+function updateStorageBox(){
+  var el=$('#storageBox'); if(!el) return;
+  var raw='';
+  try{ raw=localStorage.getItem('alorma_v9')||''; }catch(e){}
+  var bytes=raw.length;
+  var mb=(bytes/1048576).toFixed(2);
+  var limit=5;
+  var pct=Math.min(100, (bytes/1048576)/limit*100);
+  var color=pct<70?'var(--ok)':(pct<90?'#b8860b':'var(--danger)');
+  var warn=pct<70?'Plenty of space left.':(pct<90?'Getting close to the limit — consider using image URLs instead of uploads.':'Almost full — please backup and use image URLs.');
+  el.innerHTML=''
+    +'<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px">'
+    +'<span style="font-weight:800;color:var(--navy)">Storage used</span>'
+    +'<span style="font-weight:800;color:'+color+'">'+mb+' MB / ~'+limit+' MB ('+pct.toFixed(0)+'%)</span>'
+    +'</div>'
+    +'<div style="height:8px;background:#e2e8f2;border-radius:999px;overflow:hidden;margin-bottom:8px">'
+    +'<div style="height:100%;width:'+pct+'%;background:'+color+';transition:.3s"></div>'
+    +'</div>'
+    +'<div style="font-size:.78rem;line-height:1.5">'+warn+'</div>';
+}
+
+function exportBackup(){
+  try{
+    var payload={
+      _meta:{app:'Alorma Impact Ventures Shop', version:9, exportedAt:new Date().toISOString()},
+      data:S
+    };
+    var json=JSON.stringify(payload);
+    var blob=new Blob([json], {type:'application/json'});
+    var url=URL.createObjectURL(blob);
+    var d=new Date();
+    var pad=function(n){return n<10?'0'+n:''+n;};
+    var stamp=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'_'+pad(d.getHours())+'-'+pad(d.getMinutes());
+    var a=document.createElement('a');
+    a.href=url;
+    a.download='alorma-backup-'+stamp+'.json';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 500);
+    toast('Backup downloaded ('+(json.length/1048576).toFixed(2)+' MB)','ok');
+  }catch(e){
+    console.warn(e);
+    toast('Backup failed — try removing some product images','err');
+  }
+}
+
+function importBackup(file){
+  if(!file) return;
+  if(!confirm('Importing will REPLACE all current products, reviews, categories and settings with the contents of this file.\n\nContinue?')) return;
+  var r=new FileReader();
+  r.onload=function(e){
+    try{
+      var parsed=JSON.parse(e.target.result);
+      var incoming = parsed && parsed.data ? parsed.data : parsed;
+      if(!incoming || typeof incoming !== 'object') throw new Error('Invalid file');
+      var d=def();
+      var merged={
+        settings:Object.assign({}, d.settings, incoming.settings||{}),
+        admin:Object.assign({}, d.admin, incoming.admin||{}),
+        why: Array.isArray(incoming.why) ? incoming.why : d.why,
+        reviews: Array.isArray(incoming.reviews) ? incoming.reviews : d.reviews,
+        products: Array.isArray(incoming.products) ? incoming.products : d.products
+      };
+      if(!Array.isArray(merged.settings.categories)){
+        merged.settings.categories=d.settings.categories;
+      }
+      if(!Array.isArray(merged.settings.socials)){
+        if(merged.settings.socials && typeof merged.settings.socials==='object'){
+          var arr=[];
+          Object.keys(merged.settings.socials).forEach(function(k){
+            if(merged.settings.socials[k]) arr.push({p:k,u:merged.settings.socials[k]});
+          });
+          merged.settings.socials=arr;
+        } else {
+          merged.settings.socials=d.settings.socials;
+        }
+      }
+      S=merged;
+      save();
+      applySite();
+      refresh();
+      updateCart();
+      toast('Backup imported successfully!','ok');
+    }catch(err){
+      console.warn(err);
+      toast('Import failed — file is not a valid backup','err');
+    }
+  };
+  r.readAsText(file);
+}
+
+/* ========== BIND ========== */
+function bind(){
+  // Admin dot
+  $('#dot').addEventListener('click',showLogin);
+  $('#bk').addEventListener('click',hideLogin);
+  $('#lf').addEventListener('submit',handleLogin);
+  // Admin nav
+  $$('#snv button').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#snv button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      $$('.ap').forEach(function(p){p.classList.remove('on');});
+      $('.ap[data-p="'+b.dataset.t+'"]').classList.add('on');
+    });
+  });
+  $('#view').addEventListener('click',hideAdmin);
+  $('#out').addEventListener('click',function(){ hideAdmin(); toast('Logged out','ok'); });
+  $('#ap1').addEventListener('click',function(){ openProd(); });
+  $('#ap2').addEventListener('click',function(){ openProd(); });
+  $('#saveP').addEventListener('click',saveProd);
+  $('#pt').addEventListener('click',function(e){
+    var ed=e.target.closest('[data-edit]'),dl=e.target.closest('[data-del]');
+    if(ed)openProd(ed.dataset.edit);
+    if(dl){ if(!confirm('Delete this product?'))return;
+      S.products=S.products.filter(function(x){return x.id!==dl.dataset.del;});
+      save();renderGrid();refresh();toast('Deleted','ok'); }
+  });
+  // Product file uploads
+  $('#pfile').addEventListener('change',function(e){
+    var files=Array.prototype.slice.call(e.target.files);
+    if(!files.length)return;
+    var done=0;
+    files.forEach(function(f){
+      resizeImg(f,1400,function(dataUrl){
+        _pImgs.push(dataUrl);
+        done++;
+        if(done===files.length) renderPImgs();
+      });
+    });
+    e.target.value='';
+  });
+  $('#pimg').addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      e.preventDefault();
+      var v=this.value.trim();
+      if(v){ _pImgs.push(v); renderPImgs(); this.value=''; }
+    }
+  });
+  $('#pImages').addEventListener('click',function(e){
+    var rm=e.target.closest('[data-rmi]'),cv=e.target.closest('[data-cvr]');
+    if(rm){ _pImgs.splice(+rm.dataset.rmi,1); renderPImgs(); }
+    if(cv){ var i=+cv.dataset.cvr; var img=_pImgs.splice(i,1)[0]; _pImgs.unshift(img); renderPImgs(); }
+  });
+  // Logo upload
+  $('#lfile').addEventListener('change',function(e){
+    var f=e.target.files[0];if(!f)return;
+    resizeImg(f,400,function(dataUrl){
+      S.settings.logo=dataUrl; save(); renderLogo(); applySite(); toast('Logo updated','ok');
+    });
+  });
+  $('#rmLogo').addEventListener('click',function(){
+    S.settings.logo=null; save(); renderLogo(); applySite(); toast('Logo removed','ok');
+  });
+  // Hero image upload
+  $('#hfile').addEventListener('change',function(e){
+    var f=e.target.files[0];if(!f)return;
+    resizeImg(f,1400,function(dataUrl){
+      S.settings.heroImage=dataUrl; save(); applySite(); refresh(); toast('Hero image updated','ok');
+    });
+  });
+  $('#rmHero').addEventListener('click',function(){
+    S.settings.heroImage=null; save(); applySite(); refresh(); toast('Hero now shows your logo','ok');
+  });
+  // Save settings
+  $('#saveS').addEventListener('click',function(){
+    var s=S.settings;
+    s.brand=$('#sb').value||'Alorma';
+    s.sub=$('#ss').value||'Impact Ventures';
+    s.phone=$('#sp').value;
+    s.whatsapp=$('#sw').value;
+    s.email=$('#se').value;
+    s.address=$('#sa').value;
+    S.admin.user=$('#su').value||'admin';
+    S.admin.pass=$('#spw').value||'alorma2026';
+    save(); applySite(); toast('Settings saved','ok');
+  });
+  $('#reset').addEventListener('click',function(){
+    if(!confirm('Reset ALL shop data to defaults? This cannot be undone.'))return;
+    S=def(); save(); renderGrid(); applySite(); refresh(); toast('Reset done','ok');
+  });
+  // Filters
+  $('#filters').addEventListener('click',function(e){
+    var b=e.target.closest('.chip');
+    if(b){ cat=b.dataset.cat; renderGrid(); }
+  });
+  // Search
+  $('#search').addEventListener('input',function(e){ q=e.target.value; renderGrid(); });
+  // Add to cart + product carousel
+  $('#grid').addEventListener('click',function(e){
+    var nav=e.target.closest('[data-nav]'),dot=e.target.closest('[data-dot]'),imgEl=e.target.closest('[data-open]');
+    var addBtn=e.target.closest('[data-add]');
+    if(addBtn){ e.stopPropagation(); addCart(addBtn.dataset.add); return; }
+    if(nav||dot){
+      e.stopPropagation();
+      var cm=e.target.closest('.cm');
+      var slides=cm.querySelectorAll('.slide'),dots=cm.querySelectorAll('.sdots span');
+      var cur=0; slides.forEach(function(s,i){ if(s.classList.contains('on'))cur=i; });
+      var next = nav ? (cur+(+nav.dataset.nav)+slides.length)%slides.length : +dot.dataset.dot;
+      slides.forEach(function(s,i){ s.classList.toggle('on',i===next); });
+      dots.forEach(function(d,i){ d.classList.toggle('on',i===next); });
+      return;
+    }
+    if(imgEl){
+      var p=S.products.find(function(x){return x.id===imgEl.dataset.open;});
+      if(p)openLbx(p,+imgEl.dataset.idx);
+    }
+  });
+  // Lightbox
+  $('#lbxX').addEventListener('click',closeLbx);
+  $('#lbxP').addEventListener('click',function(e){ e.stopPropagation(); navLbx(-1); });
+  $('#lbxN').addEventListener('click',function(e){ e.stopPropagation(); navLbx(1); });
+  $('#lbxT').addEventListener('click',function(e){
+    var t=e.target.closest('[data-t]'); if(t){ _lb.i=+t.dataset.t; updateLbx(); }
+  });
+  $('#lbx').addEventListener('click',function(e){ if(e.target.id==='lbx') closeLbx(); });
+  document.addEventListener('keydown',function(e){
+    if(!$('#lbx').classList.contains('on'))return;
+    if(e.key==='Escape')closeLbx();
+    if(e.key==='ArrowLeft')navLbx(-1);
+    if(e.key==='ArrowRight')navLbx(1);
+  });
+  // Cart
+  $('#openCart').addEventListener('click',function(){ $('#dr').classList.add('on'); $('#bd').classList.add('on'); document.body.classList.add('lock'); });
+  function closeD(){ $('#dr').classList.remove('on'); $('#bd').classList.remove('on'); document.body.classList.remove('lock'); }
+  $('#cx').addEventListener('click',closeD);
+  $('#bd').addEventListener('click',closeD);
+  $('#cb').addEventListener('click',function(e){
+    var b=e.target.closest('[data-q]');
+    if(b) chQty(b.dataset.i,b.dataset.q);
+  });
+  $('#co').addEventListener('click',function(){ if(!cart.length)return toast('Cart empty','err'); $('#modCo').classList.add('on'); });
+  $('#place').addEventListener('click',placeOrder);
+  // Close modals
+  document.addEventListener('click',function(e){
+    var c=e.target.closest('[data-close]');
+    if(c){ $('#modCo').classList.remove('on'); $('#modPr').classList.remove('on'); }
+  });
+  // Reviews carousel
+  $('#revPrev').addEventListener('click',function(){ showRevSlide(revIdx-1); });
+  $('#revNext').addEventListener('click',function(){ showRevSlide(revIdx+1); });
+  $('#revDots').addEventListener('click',function(e){
+    var d=e.target.closest('[data-rv]');
+    if(d) showRevSlide(+d.dataset.rv);
+  });
+  $('#revSlider').addEventListener('mouseenter',stopRevAuto);
+  $('#revSlider').addEventListener('mouseleave',function(){ if(revTotal>1) startRevAuto(); });
+  // Reviews admin
+  $('#rvToggle').addEventListener('change',function(e){
+    S.settings.reviewsEnabled=e.target.checked;
+    save(); renderReviews(); refreshReviewsAdmin();
+    toast(e.target.checked?'Reviews are now ON':'Reviews are now OFF','ok');
+  });
+  $('#rvAddAdmin').addEventListener('click',function(){
+    var n=prompt('Customer name:');if(!n)return;
+    var role=prompt('Role / Company (optional):','')||'';
+    var r=prompt('Rating (1-5):','5');if(!r)return;
+    r=Math.max(1,Math.min(5,parseInt(r,10)||5));
+    var t=prompt('Review text:');if(!t)return;
+    S.reviews.push({id:uid(),name:n,role:role,rating:r,text:t,date:new Date().toISOString(),photo:null});
+    save(); renderReviews(); refreshReviewsAdmin(); toast('Review added','ok');
+  });
+  // Categories admin
+  $('#catAddBtn').addEventListener('click',function(){
+    var v=$('#catNew').value.trim();
+    if(!v)return toast('Enter a category name','err');
+    S.settings.categories=S.settings.categories||[];
+    if(S.settings.categories.find(function(c){return c.name.toLowerCase()===v.toLowerCase();}))
+      return toast('Category already exists','err');
+    S.settings.categories.push({name:v,visible:true});
+    save();
+    $('#catNew').value='';
+    renderCategoriesAdmin();
+    renderGrid();
+    renderCatDatalist();
+    toast('Category added','ok');
+  });
+  $('#catNew').addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ e.preventDefault(); $('#catAddBtn').click(); }
+  });
+  $('#catList').addEventListener('click',function(e){
+    var d=e.target.closest('[data-cat-del]');
+    if(!d) return;
+    var i=+d.dataset.catDel;
+    var c=S.settings.categories[i];
+    if(!c) return;
+    if(!confirm('Delete category "'+c.name+'"?\n\nProducts will keep their label but the filter chip will disappear.')) return;
+    S.settings.categories.splice(i,1);
+    save();
+    renderCategoriesAdmin();
+    renderGrid();
+    renderCatDatalist();
+    toast('Category deleted','ok');
+  });
+  $('#catList').addEventListener('change',function(e){
+    var t=e.target;
+    var vi=t.getAttribute('data-cat-vis');
+    var ni=t.getAttribute('data-cat-name');
+    if(vi!==null&&vi!==undefined){
+      S.settings.categories[+vi].visible=t.checked;
+      save();
+      renderGrid();
+      toast(t.checked?'Category shown':'Category hidden','ok');
+    }
+    if(ni!==null&&ni!==undefined){
+      var old=S.settings.categories[+ni].name;
+      var nv=t.value.trim();
+      if(!nv){ t.value=old; return toast('Name cannot be empty','err'); }
+      if(nv===old) return;
+      if(S.settings.categories.find(function(c,k){return k!==+ni && c.name.toLowerCase()===nv.toLowerCase();})){
+        t.value=old;
+        return toast('That name already exists','err');
+      }
+      S.settings.categories[+ni].name=nv;
+      S.products.forEach(function(p){ if(p.cat===old) p.cat=nv; });
+      save();
+      renderCategoriesAdmin();
+      renderGrid();
+      renderCatDatalist();
+      toast('Category renamed','ok');
+    }
+  });
+  // Socials editor
+  $('#socAdd').addEventListener('click',function(){
+    S.settings.socials=S.settings.socials||[];
+    S.settings.socials.push({p:'facebook',u:''});
+    save(); renderSocialsEditor();
+    setTimeout(function(){
+      var inputs=$$('#socEditor [data-soc-u]');
+      if(inputs.length) inputs[inputs.length-1].focus();
+    },50);
+  });
+  $('#socEditor').addEventListener('input',function(e){
+    var t=e.target;
+    var pi=t.getAttribute('data-soc-p');
+    var ui=t.getAttribute('data-soc-u');
+    if(pi!==null&&pi!==undefined){
+      S.settings.socials[+pi].p=t.value;
+      save(); renderSocs();
+    }
+    if(ui!==null&&ui!==undefined){
+      S.settings.socials[+ui].u=t.value.trim();
+      save(); renderSocs();
+    }
+  });
+  $('#socEditor').addEventListener('change',function(e){
+    var t=e.target;
+    var pi=t.getAttribute('data-soc-p');
+    if(pi!==null&&pi!==undefined){
+      S.settings.socials[+pi].p=t.value;
+      save(); renderSocs();
+    }
+  });
+  $('#socEditor').addEventListener('click',function(e){
+    var d=e.target.closest('[data-soc-del]');
+    if(!d) return;
+    if(!confirm('Delete this social link?')) return;
+    S.settings.socials.splice(+d.getAttribute('data-soc-del'),1);
+    save(); renderSocialsEditor(); renderSocs();
+    toast('Social link removed','ok');
+  });
+  // Backup / Restore
+  var bex=$('#backupExport');
+  if(bex) bex.addEventListener('click', exportBackup);
+  var bim=$('#backupImport');
+  if(bim) bim.addEventListener('change', function(e){
+    var f=e.target.files[0];
+    if(f) importBackup(f);
+    e.target.value='';
+  });
+  // Smooth scroll
+  $$('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=$(a.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+    });
+  });
+}
+
+/* ========== INIT ========== */
+function init(){
+  load();
+  applySite();
+  updateCart();
+  bind();
+  console.log('%c✅ Alorma shop ready — admin / alorma2026','color:#0f8a5f;font-weight:bold;font-size:14px');
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+else init();
+})();
+</script>
+</body>
+</html>
