@@ -3180,13 +3180,9 @@ async function init(){
   applySite();
   updateCart();
   bind();
-  console.log('%c✅ Alorma Impact Ventures ready — admin / alorma2026','color:#0f7a4f;font-weight:bold;font-size:14px');
-  if(CLOUD_READY){
-    console.log('%c☁️ Cloud sync is active — changes save to Supabase','color:#0f7a4f;font-weight:bold');
-  } else {
-    console.warn('⚠️ Cloud not connected — running on local storage only');
-  }
+  console.log('%c✅ Alorma Impact Ventures ready — Supabase connected','color:#0f7a4f;font-weight:bold;font-size:14px');
 }
+
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
 else init();
 })();
