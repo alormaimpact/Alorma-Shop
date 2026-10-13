@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{
   --blue:#0a2540;--blue2:#0f3460;--blue3:#164a7b;--blue4:#1e5fa0;
@@ -1100,6 +1101,158 @@ tr:hover td{background:#f8fafc}
 'use strict';
 
 function $(s){return document.querySelector(s);}
+
+/* ============================================================
+   SUPABASE CLOUD
+   ============================================================ */
+var SB_URL = 'https://zolwibyncknhcaciuksg.supabase.co';
+var SB_KEY = 'sb_publishable_r6BiQzH-a60jtc8eG4yaVw_4Gs6W9e9';
+var sb = null;
+var CLOUD_READY = false;
+
+function initCloud(){
+  try{
+    if(typeof supabase === 'undefined' || !supabase.createClient){
+      console.warn('Supabase library not loaded — running on local storage only');
+      return;
+    }
+    sb = supabase.createClient(SB_URL, SB_KEY);
+    CLOUD_READY = true;
+    console.log('%c☁️ Supabase connected','color:#0f7a4f;font-weight:bold');
+  }catch(e){
+    console.warn('Supabase init failed', e);
+    CLOUD_READY = false;
+  }
+}
+
+async function cloudLoad(){
+  if(!CLOUD_READY || !sb) return null;
+  try{
+    var results = await Promise.all([
+      sb.from('settings').select('*').eq('id',1).maybeSingle(),
+      sb.from('sections').select('*').order('sort_order'),
+      sb.from('products').select('*').order('sort_order'),
+      sb.from('reviews').select('*').order('date',{ascending:false})
+    ]);
+    var st = results[0].data;
+    var sec = results[1].data || [];
+    var pro = results[2].data || [];
+    var rev = results[3].data || [];
+    return {
+      settings: st && st.data && Object.keys(st.data).length ? st.data : null,
+      sections: sec,
+      products: pro,
+      reviews: rev
+    };
+  }catch(e){
+    console.warn('cloudLoad failed', e);
+    return null;
+  }
+}
+
+async function cloudSave(){
+  if(!CLOUD_READY || !sb) return;
+  try{
+    // settings as a JSON blob (sections live inside settings)
+    await sb.from('settings').upsert({
+      id: 1,
+      data: S.settings,
+      updated_at: new Date().toISOString()
+    });
+
+    // sections (kept in their own table for query-ability)
+    if(Array.isArray(S.settings.sections) && S.settings.sections.length){
+      var secRows = S.settings.sections.map(function(sc,i){
+        return {
+          id: sc.id,
+          name: sc.name,
+          tagline: sc.tagline || '',
+          description: sc.desc || '',
+          whatsapp: sc.whatsapp || '',
+          visible: sc.visible !== false,
+          photo: sc.photo || null,
+          categories: sc.categories || [],
+          sort_order: i
+        };
+      });
+      await sb.from('sections').upsert(secRows);
+    }
+
+    // products
+    if(Array.isArray(S.products) && S.products.length){
+      var prodRows = S.products.map(function(p,i){
+        return {
+          id: p.id,
+          section_id: p.sec,
+          category: p.cat || '',
+          name: p.name,
+          size: p.sz || '',
+          badge: p.badge || '',
+          price: p.price || 0,
+          discount: p.discount || 0,
+          wholesale: p.wh || 0,
+          has_wholesale: !!p.hasWholesale,
+          stock: p.stock || 0,
+          short_desc: p.desc || '',
+          long_desc: p.ldesc || '',
+          options: p.options || [],
+          hidden: !!p.hidden,
+          images: p.images || [],
+          sort_order: i
+        };
+      });
+      await sb.from('products').upsert(prodRows);
+    }
+
+    // reviews
+    if(Array.isArray(S.reviews) && S.reviews.length){
+      var revRows = S.reviews.map(function(r){
+        return {
+          id: r.id,
+          name: r.name,
+          role: r.role || '',
+          rating: r.rating,
+          text: r.text,
+          photo: r.photo || null,
+          date: r.date || new Date().toISOString(),
+          approved: true
+        };
+      });
+      await sb.from('reviews').upsert(revRows);
+    }
+  }catch(e){
+    console.warn('cloudSave failed', e);
+  }
+}
+
+async function cloudUploadImage(dataUrl, folder){
+  if(!CLOUD_READY || !sb) return null;
+  try{
+    var resp = await fetch(dataUrl);
+    var blob = await resp.blob();
+    var ext = (blob.type && blob.type.indexOf('png') > -1) ? 'png' : 'jpg';
+    var filename = (folder||'misc') + '/' + Date.now() + '_' + Math.random().toString(36).slice(2,8) + '.' + ext;
+    var up = await sb.storage.from('shop-images').upload(filename, blob, {
+      contentType: blob.type || 'image/jpeg',
+      upsert: false
+    });
+    if(up.error){ console.warn('Upload error', up.error); return null; }
+    var pub = sb.storage.from('shop-images').getPublicUrl(filename);
+    return pub.data.publicUrl;
+  }catch(e){
+    console.warn('cloudUploadImage failed', e);
+    return null;
+  }
+}
+
+function cloudRebuild(){
+  if(!CLOUD_READY || !sb){ toast('Cloud not connected — changes saved locally only','err'); return; }
+  cloudSave().then(function(){
+    toast('Synced to cloud ✓','ok');
+  }).catch(function(){
+    toast('Cloud sync failed — saved locally','err');
+  });
+}
 function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function money(n){return '₵'+Number(n||0).toLocaleString('en-GH',{minimumFractionDigits:2,maximumFractionDigits:2});}
@@ -1252,46 +1405,127 @@ function def(){
 var S=null,cart=[],currentSec='all',currentCat='All',q='';
 var adminSecFilter='all';
 
-function load(){
+function parseLocal(raw){
   try{
-    var r=localStorage.getItem('alorma_v11');
-    if(r){
-      var p=JSON.parse(r),d=def();
-      if(p.settings&&p.settings.socials&&!Array.isArray(p.settings.socials)){
-        var arr=[];
-        Object.keys(p.settings.socials).forEach(function(k){
-          if(p.settings.socials[k]) arr.push({p:k,u:p.settings.socials[k]});
-        });
-        p.settings.socials=arr;
-      }
-      S={
-        settings:Object.assign({},d.settings,p.settings||{}),
-        admin:Object.assign({},d.admin,p.admin||{}),
-        products:Array.isArray(p.products)?p.products:d.products,
-        reviews:Array.isArray(p.reviews)?p.reviews:d.reviews
-      };
-      if(Array.isArray(S.settings.sections)){
-        S.settings.sections.forEach(function(sc){
-          if(!sc.id) sc.id=uid();
-          if(!sc.whatsapp) sc.whatsapp='233268508939';
-          if(!Array.isArray(sc.categories)) sc.categories=[];
-          if(sc.visible===undefined) sc.visible=true;
-        });
-      } else { S.settings.sections=d.settings.sections; }
-      if(!Array.isArray(S.settings.why)) S.settings.why=d.settings.why;
-      if(!Array.isArray(S.settings.shopPhotos)) S.settings.shopPhotos=[];
-      // Normalise products
-      S.products.forEach(function(p){
-        if(p.hasWholesale===undefined) p.hasWholesale = !!p.wh;
-        if(p.discount===undefined) p.discount = 0;
-        if(!Array.isArray(p.options)) p.options = [];
-        if(p.hidden===undefined) p.hidden = false;
+    var p=JSON.parse(raw),d=def();
+    if(p.settings&&p.settings.socials&&!Array.isArray(p.settings.socials)){
+      var arr=[];
+      Object.keys(p.settings.socials).forEach(function(k){
+        if(p.settings.socials[k]) arr.push({p:k,u:p.settings.socials[k]});
       });
-    } else { S=def(); save(); }
-  }catch(e){ console.warn(e); S=def(); }
-  try{ cart=JSON.parse(localStorage.getItem('alorma_cart_v11')||'[]'); }catch(e){ cart=[]; }
+      p.settings.socials=arr;
+    }
+    var st={
+      settings:Object.assign({},d.settings,p.settings||{}),
+      admin:Object.assign({},d.admin,p.admin||{}),
+      products:Array.isArray(p.products)?p.products:d.products,
+      reviews:Array.isArray(p.reviews)?p.reviews:d.reviews
+    };
+    if(Array.isArray(st.settings.sections)){
+      st.settings.sections.forEach(function(sc){
+        if(!sc.id) sc.id=uid();
+        if(!sc.whatsapp) sc.whatsapp='233268508939';
+        if(!Array.isArray(sc.categories)) sc.categories=[];
+        if(sc.visible===undefined) sc.visible=true;
+      });
+    } else { st.settings.sections=d.settings.sections; }
+    if(!Array.isArray(st.settings.why)) st.settings.why=d.settings.why;
+    if(!Array.isArray(st.settings.shopPhotos)) st.settings.shopPhotos=[];
+    st.products.forEach(function(p){
+      if(p.hasWholesale===undefined) p.hasWholesale = !!p.wh;
+      if(p.discount===undefined) p.discount = 0;
+      if(!Array.isArray(p.options)) p.options = [];
+      if(p.hidden===undefined) p.hidden = false;
+    });
+    return st;
+  }catch(e){ return null; }
 }
-function save(){ try{ localStorage.setItem('alorma_v11',JSON.stringify(S)); }catch(e){ console.warn('Storage full',e); } }
+
+function buildFromCloud(cloud){
+  var d=def();
+  var S2={
+    settings:Object.assign({}, d.settings, cloud.settings||{}),
+    admin:Object.assign({}, d.admin),
+    products:[],
+    reviews:[]
+  };
+  // Sections from the sections table
+  if(cloud.sections && cloud.sections.length){
+    S2.settings.sections = cloud.sections.map(function(r){
+      return {
+        id: r.id, name: r.name, tagline: r.tagline || '',
+        desc: r.description || '', whatsapp: r.whatsapp || '',
+        visible: r.visible !== false, photo: r.photo || null,
+        categories: Array.isArray(r.categories) ? r.categories : []
+      };
+    });
+  }
+  // Products
+  S2.products = (cloud.products || []).map(function(p){
+    return {
+      id: p.id, sec: p.section_id, cat: p.category || '',
+      name: p.name, sz: p.size || '', badge: p.badge || '',
+      price: Number(p.price)||0, discount: p.discount||0,
+      wh: Number(p.wholesale)||0, hasWholesale: !!p.has_wholesale,
+      stock: p.stock||0, desc: p.short_desc || '', ldesc: p.long_desc || '',
+      options: Array.isArray(p.options)?p.options:[],
+      hidden: !!p.hidden,
+      images: Array.isArray(p.images)?p.images:[]
+    };
+  });
+  // Reviews
+  S2.reviews = (cloud.reviews || []).map(function(r){
+    return {
+      id: r.id, name: r.name, role: r.role || '',
+      rating: r.rating, text: r.text,
+      photo: r.photo || null, date: r.date
+    };
+  });
+  return S2;
+}
+
+async function load(){
+  // 1. Load cart from local always
+  try{ cart=JSON.parse(localStorage.getItem('alorma_cart_v11')||'[]'); }catch(e){ cart=[]; }
+
+  // 2. Try cloud
+  var cloud = await cloudLoad();
+  var hasCloudData = cloud && cloud.settings && Object.keys(cloud.settings).length > 0;
+
+  if(hasCloudData){
+    S = buildFromCloud(cloud);
+    try{ localStorage.setItem('alorma_v11', JSON.stringify(S)); }catch(e){}
+    console.log('%c📥 Loaded shop from cloud','color:#0f7a4f');
+    return;
+  }
+
+  // 3. Cloud empty — try local
+  var localRaw = null;
+  try{ localRaw = localStorage.getItem('alorma_v11'); }catch(e){}
+  if(localRaw){
+    var localS = parseLocal(localRaw);
+    if(localS){
+      S = localS;
+      console.log('📤 Local data found — pushing to cloud…');
+      setTimeout(function(){ cloudSave(); }, 800);
+      return;
+    }
+  }
+
+  // 4. Nothing anywhere — fresh start
+  S = def();
+  try{ localStorage.setItem('alorma_v11', JSON.stringify(S)); }catch(e){}
+  setTimeout(function(){ cloudSave(); }, 800);
+}
+function save(){
+  // Always save locally first (instant)
+  try{ localStorage.setItem('alorma_v11',JSON.stringify(S)); }
+  catch(e){ console.warn('Storage full',e); }
+  // Then sync to cloud in the background
+  if(CLOUD_READY){
+    cloudSave().catch(function(e){ console.warn('Cloud save error',e); });
+  }
+}
 function saveCart(){ try{ localStorage.setItem('alorma_cart_v11',JSON.stringify(cart)); }catch(e){} }
 
 function toast(m,t){
@@ -1763,11 +1997,12 @@ function renderReviews(){
       window._rvRating=+t.dataset.v;
       $$('#rvStars span').forEach(function(s){ s.classList.toggle('on',+s.dataset.v<=window._rvRating); });
     });
-    $('#rvPhoto').addEventListener('change',function(e){
+        $('#rvPhoto').addEventListener('change',function(e){
       var f=e.target.files[0]; if(!f) return;
-      resizeImg(f,200,function(dataUrl){
-        window._rvPhoto=dataUrl;
-        $('#rvAvPrev').innerHTML='<img src="'+dataUrl+'" alt="">';
+      resizeImg(f,200,async function(dataUrl){
+        var url = await cloudUploadImage(dataUrl,'reviews');
+        window._rvPhoto = url || dataUrl;
+        $('#rvAvPrev').innerHTML='<img src="'+(url||dataUrl)+'" alt="">';
       });
     });
     $('#rvSubmit').addEventListener('click',submitReview);
@@ -2526,16 +2761,23 @@ function bind(){
   });
 
   // Product images
-  $('#pfile').addEventListener('change',function(e){
+    $('#pfile').addEventListener('change',async function(e){
     var files=Array.prototype.slice.call(e.target.files);
     if(!files.length) return;
+    toast('Uploading '+files.length+' image'+(files.length>1?'s':'')+'…');
     var done=0;
-    files.forEach(function(f){
-      resizeImg(f,1400,function(dataUrl){
-        _pImgs.push(dataUrl); done++;
-        if(done===files.length) renderPImgs();
+    for(var k=0;k<files.length;k++){
+      await new Promise(function(resolve){
+        resizeImg(files[k],1400,async function(dataUrl){
+          var url = await cloudUploadImage(dataUrl,'products');
+          _pImgs.push(url || dataUrl);
+          done++;
+          resolve();
+        });
       });
-    });
+    }
+    renderPImgs();
+    toast(done+' image'+(done>1?'s':'')+' uploaded ✓','ok');
     e.target.value='';
   });
   $('#pimg').addEventListener('keydown',function(e){
@@ -2552,26 +2794,37 @@ function bind(){
   });
 
   // Logo
-  $('#lfile').addEventListener('change',function(e){
+    $('#lfile').addEventListener('change',async function(e){
     var f=e.target.files[0]; if(!f) return;
-    resizeImg(f,400,function(dataUrl){
-      S.settings.logo=dataUrl; save(); renderLogo(); renderAdminLogo(); applySite(); toast('Logo updated','ok');
+    toast('Uploading…');
+    resizeImg(f,400,async function(dataUrl){
+      var url = await cloudUploadImage(dataUrl,'logo');
+      S.settings.logo = url || dataUrl;
+      save(); renderLogo(); renderAdminLogo(); applySite();
+      toast(url?'Logo uploaded to cloud ✓':'Logo saved locally','ok');
     });
   });
   $('#rmLogo').addEventListener('click',function(){ S.settings.logo=null; save(); renderLogo(); renderAdminLogo(); applySite(); toast('Logo removed','ok'); });
 
   // Shop photos
-  $('#spFile').addEventListener('change',function(e){
+    $('#spFile').addEventListener('change',async function(e){
     var files=Array.prototype.slice.call(e.target.files);
     if(!files.length) return;
+    toast('Uploading '+files.length+' photo'+(files.length>1?'s':'')+'…');
     var done=0;
-    files.forEach(function(f){
-      resizeImg(f,1400,function(dataUrl){
-        S.settings.shopPhotos=S.settings.shopPhotos||[];
-        S.settings.shopPhotos.push(dataUrl); done++;
-        if(done===files.length){ save(); renderAdminShopPhotos(); renderShopCarousel(); toast(files.length+' photo'+(files.length>1?'s':'')+' added','ok'); }
+    for(var k=0;k<files.length;k++){
+      await new Promise(function(resolve){
+        resizeImg(files[k],1400,async function(dataUrl){
+          var url = await cloudUploadImage(dataUrl,'shop');
+          S.settings.shopPhotos = S.settings.shopPhotos||[];
+          S.settings.shopPhotos.push(url || dataUrl);
+          done++;
+          resolve();
+        });
       });
-    });
+    }
+    save(); renderAdminShopPhotos(); renderShopCarousel();
+    toast(done+' photo'+(done>1?'s':'')+' uploaded ✓','ok');
     e.target.value='';
   });
   $('#spUrl').addEventListener('keydown',function(e){
@@ -2589,17 +2842,19 @@ function bind(){
   });
 
     // Section photo upload
-  $('#secAdmin').addEventListener('change',function(e){
+    $('#secAdmin').addEventListener('change',function(e){
     var t=e.target;
     var fi=t.getAttribute('data-sec-photo-file');
     if(fi!==null && t.files && t.files[0]){
       var idx=+fi;
-      resizeImg(t.files[0], 1400, function(dataUrl){
-        S.settings.sections[idx].photo=dataUrl;
+      toast('Uploading…');
+      resizeImg(t.files[0], 1400, async function(dataUrl){
+        var url = await cloudUploadImage(dataUrl,'sections');
+        S.settings.sections[idx].photo = url || dataUrl;
         save();
         renderAdminSections();
         renderSections();
-        toast('Section photo updated','ok');
+        toast(url?'Section photo uploaded ✓':'Section photo saved locally','ok');
       });
     }
   });
@@ -2919,12 +3174,18 @@ function bind(){
   });
 }
 
-function init(){
-  load();
+async function init(){
+  initCloud();
+  await load();
   applySite();
   updateCart();
   bind();
   console.log('%c✅ Alorma Impact Ventures ready — admin / alorma2026','color:#0f7a4f;font-weight:bold;font-size:14px');
+  if(CLOUD_READY){
+    console.log('%c☁️ Cloud sync is active — changes save to Supabase','color:#0f7a4f;font-weight:bold');
+  } else {
+    console.warn('⚠️ Cloud not connected — running on local storage only');
+  }
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
 else init();
