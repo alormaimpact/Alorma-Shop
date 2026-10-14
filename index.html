@@ -672,10 +672,14 @@ tr:hover td{background:#f8fafc}
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
           <div><h4>Furniture Division</h4><p><a id="cpFurn" href="tel:0268508939">0268508939</a></p><p style="font-size:.79rem;color:var(--muted2);margin-top:2px">Mattresses · Pillows · Bedding</p></div>
         </div>
+                <div class="icard">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><h4>Home Appliances Division</h4><p><a id="cpLife" href="tel:0553861643">0553861643</a></p><p style="font-size:.79rem;color:var(--muted2);margin-top:2px">Fridges · TVs · Irons</p></div>
+        </div>
         <div class="icard">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
-          <div><h4>Home &amp; Fashion Division</h4><p><a id="cpLife" href="tel:0553861643">0553861643</a></p><p style="font-size:.79rem;color:var(--muted2);margin-top:2px">Appliances · Fashion</p></div>
-        </div>
+          <div><h4>Fashion Division</h4><p><a id="cpFashion" href="tel:0598649333">0598649333</a></p><p style="font-size:.79rem;color:var(--muted2);margin-top:2px">Shoes · Dresses · Bags</p></div>
+        </div>       
         <div class="icard">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <div><h4>Showroom</h4><p id="ca">Klagon NDC Junction, Accra, Ghana</p><p style="margin-top:6px"><a id="dirLink" href="#" target="_blank" rel="noopener" style="color:var(--yellow3);font-weight:700">Get directions →</a></p></div>
@@ -726,8 +730,9 @@ tr:hover td{background:#f8fafc}
         <h5>Contact</h5>
         <ul>
           <li><a id="fp" href="tel:0268508939">0268508939 — Furniture</a></li>
-          <li><a id="fp2" href="tel:0553861643">0553861643 — Home &amp; Fashion</a></li>
-          <li><a id="fe" href="mailto:info@alormaimpact.com">info@alormaimpact.com</a></li>
+           <li><a id="fp2" href="tel:0553861643">0553861643 — Home Appliances</a></li>
+          <li><a id="fp3" href="tel:0598649333">0598649333 — Fashion</a></li>          
+         <li><a id="fe" href="mailto:info@alormaimpact.com">info@alormaimpact.com</a></li>
           <li><span id="fa" style="font-size:.85rem">Klagon NDC Junction, Accra</span></li>
         </ul>
       </div>
@@ -827,7 +832,7 @@ tr:hover td{background:#f8fafc}
         <button data-t="sc">Sections</button>
         <button data-t="sh">Shop Photos</button>
         <button data-t="pt">Page Text</button>
-        <button data-t="rv">Reviews</button>        
+        <button data-t="rv">Reviews <span id="rvBadge" style="display:none;background:#e63946;color:#fff;font-size:.62rem;font-weight:800;border-radius:999px;padding:1px 7px;margin-left:6px;letter-spacing:0">0</span></button>     
         <button data-t="st">Settings</button>
       </nav>
       <div class="sf">
@@ -961,9 +966,11 @@ tr:hover td{background:#f8fafc}
             <div class="fld"><label>Brand Name</label><input id="sb"></div>
             <div class="fld"><label>Tagline</label><input id="ss"></div>
             <div class="fld"><label>Furniture Phone</label><input id="spFurn"></div>
-            <div class="fld"><label>Home &amp; Fashion Phone</label><input id="spLife"></div>
+            <div class="fld"><label>Home Appliances Phone</label><input id="spLife"></div>
+            <div class="fld"><label>Fashion Phone</label><input id="spFashion"></div>            
             <div class="fld"><label>Email</label><input id="se"></div>
             <div class="fld"><label>Address</label><input id="sa"></div>
+            <div class="fld full"><label>Google Maps URL <span style="font-weight:400;color:var(--muted2)">(optional — paste a Google Maps share link for a precise pin; leave empty to auto-use the address)</span></label><input id="mapUrlInput" placeholder="https://www.google.com/maps/place/..."></div>
             <div class="fld full"><label>Admin Username</label><input id="su"></div>
             <div class="fld full"><label>Admin Password</label><input id="spw" type="text"></div>
           </div>
@@ -1082,12 +1089,13 @@ tr:hover td{background:#f8fafc}
       <div><h3>Send Your Order</h3><p>Your order has been prepared. Tap each button below to send it on WhatsApp.</p></div>
       <button class="x" id="sendClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
-    <div class="mbody">
-      <div style="background:#fff8e0;border:1px solid #f5e2a0;color:#6a5520;padding:12px 14px;border-radius:10px;font-size:.83rem;line-height:1.6;margin-bottom:18px">
+        <div class="mbody">
+      <div id="sendWhy" style="background:#fff8e0;border:1px solid #f5e2a0;color:#6a5520;padding:12px 14px;border-radius:10px;font-size:.83rem;line-height:1.6;margin-bottom:18px">
         <b>Why do I need to click each button?</b><br>
         Browsers don't allow multiple chats to open at once. Tap each button below to send your order to the right department.
       </div>
       <div id="sendButtons"></div>
+      <div id="sendDoneNote" style="margin-top:18px;padding:14px;background:#e6f5ef;border:1px solid #b8e0cd;color:#0a5a3b;border-radius:10px;font-size:.85rem;line-height:1.65;font-weight:600"></div>
     </div>
     <div class="mf">
       <button class="btn btn-ghost" id="sendDone">Done</button>
@@ -1215,11 +1223,23 @@ async function cloudSave(){
           text: r.text,
           photo: r.photo || null,
           date: r.date || new Date().toISOString(),
-          approved: true
+          approved: r.approved !== false
         };
       });
-      await sb.from('reviews').upsert(revRows);
+         await sb.from('reviews').upsert(revRows);
     }
+
+    // Remove any reviews from Supabase that no longer exist locally (deleted/rejected)
+    try{
+      var cloudRev = await sb.from('reviews').select('id');
+      if(cloudRev.data && cloudRev.data.length){
+        var keepIds = S.reviews.map(function(x){ return x.id; });
+        var orphanIds = cloudRev.data.map(function(row){ return row.id; }).filter(function(id){ return keepIds.indexOf(id)===-1; });
+        if(orphanIds.length){
+          await sb.from('reviews').delete().in('id', orphanIds);
+        }
+      }
+    }catch(e2){ console.warn('Review cleanup failed', e2); }
   }catch(e){
     console.warn('cloudSave failed', e);
   }
@@ -1302,9 +1322,11 @@ function def(){
       tagline:'Furniture · Appliances · Fashion',
       phoneFurniture:'0268508939',
       phoneLifestyle:'0553861643',
+      phoneFashion:'0598649333',      
       email:'info@alormaimpact.com',
       address:'Klagon NDC Junction, Accra, Ghana',
-      heroKicker:'Alorma Impact Ventures',
+      mapUrl:'',
+      heroKicker:'Alorma Impact Ventures',      
       heroTitle:'Quality You Can <em>Trust</em>, Comfort You Can Feel.',
       heroSub:'Your trusted wholesale and retail dealer for orthopedic mattresses, home appliances and fashion. Serving Accra and beyond with honest quality and great value.',
       heroBtn1:'Explore Our Shop',
@@ -1337,8 +1359,7 @@ function def(){
           categories:['Orthopedic Mattresses','Standard Mattresses','Pillows','Bed Frames','Bedding']},
         {id:'appliances',name:'Home Appliances',tagline:'Fridges · TVs · Irons',desc:'Refrigerators, televisions, irons, kitchen and home essentials.',whatsapp:'233553861643',visible:true,photo:null,
           categories:['Refrigerators','Televisions','Irons','Kitchen','Fans']},
-        {id:'fashion',name:'Fashion',tagline:'Shoes · Dresses · Bags',desc:'Shoes, dresses, bags and everyday style for men and women.',whatsapp:'233553861643',visible:true,photo:null,
-          categories:['Shoes','Dresses','Bags','Accessories']}
+        {id:'fashion',name:'Fashion',tagline:'Shoes · Dresses · Bags',desc:'Shoes, dresses, bags and everyday style for men and women.',whatsapp:'233598649333',visible:true,photo:null,   categories:['Shoes','Dresses','Bags','Accessories']}
       ]
     },
     admin:{user:'admin',pass:'alorma2026'},
@@ -1474,11 +1495,12 @@ function buildFromCloud(cloud){
     };
   });
   // Reviews
-  S2.reviews = (cloud.reviews || []).map(function(r){
+    S2.reviews = (cloud.reviews || []).map(function(r){
     return {
       id: r.id, name: r.name, role: r.role || '',
       rating: r.rating, text: r.text,
-      photo: r.photo || null, date: r.date
+      photo: r.photo || null, date: r.date,
+      approved: r.approved !== false
     };
   });
   return S2;
@@ -1575,11 +1597,13 @@ function applySite(){
   var ws=$('#whySub'); if(ws) ws.textContent=s.whySub||'A family-owned venture committed to honest pricing, dependable quality and genuine customer care.';
   $('#fab').textContent=s.footerAbout;  $('#cpFurn').textContent=s.phoneFurniture;$('#cpFurn').href='tel:'+s.phoneFurniture.replace(/\s/g,'');
   $('#cpLife').textContent=s.phoneLifestyle;$('#cpLife').href='tel:'+s.phoneLifestyle.replace(/\s/g,'');
+  var cpFash=$('#cpFashion'); if(cpFash){ var fnum=s.phoneFashion||'0598649333'; cpFash.textContent=fnum; cpFash.href='tel:'+fnum.replace(/\s/g,''); }
   $('#ce').textContent=s.email;$('#ce').href='mailto:'+s.email;
   $('#ca').textContent=s.address;
-  $('#dirLink').href='https://maps.google.com/?q='+encodeURIComponent(s.address);
+  $('#dirLink').href = s.mapUrl ? s.mapUrl : 'https://maps.google.com/?q='+encodeURIComponent(s.address);  
   $('#fp').textContent=s.phoneFurniture+' — Furniture';$('#fp').href='tel:'+s.phoneFurniture.replace(/\s/g,'');
-  $('#fp2').textContent=s.phoneLifestyle+' — Home & Fashion';$('#fp2').href='tel:'+s.phoneLifestyle.replace(/\s/g,'');
+  $('#fp2').textContent=s.phoneLifestyle+' — Home Appliances';$('#fp2').href='tel:'+s.phoneLifestyle.replace(/\s/g,'');
+  var fp3=$('#fp3'); if(fp3){ var fnum2=s.phoneFashion||'0598649333'; fp3.textContent=fnum2+' — Fashion'; fp3.href='tel:'+fnum2.replace(/\s/g,''); }
   $('#fe').textContent=s.email;$('#fe').href='mailto:'+s.email;
   $('#fa').textContent=s.address;
   $('#yr').textContent=new Date().getFullYear();
@@ -1819,9 +1843,12 @@ function updateCart(){
   $('#sub').textContent=money(t); $('#tot').textContent=money(t);
   var dests={};
   cart.forEach(function(it){ var s=getSection(it.sec); if(s) dests[s.whatsapp]=true; });
-  if(Object.keys(dests).length>1){
+  var destCount2 = Object.keys(dests).length;
+  if(destCount2 > 1){
+    var numWord2 = destCount2===2?'Two':(destCount2===3?'Three':destCount2);
+    var otherWord2 = destCount2===2?'the other department\'s items':'the other departments\' items';
     $('#routeNote').style.display='block';
-    $('#routeNote').innerHTML='<b>Two WhatsApp chats will open.</b> Furniture items go to '+esc(S.settings.phoneFurniture)+' and Home Appliances or Fashion items go to '+esc(S.settings.phoneLifestyle)+'. Each seller will be notified about the other department\'s items.';
+    $('#routeNote').innerHTML='<b>'+numWord2+' WhatsApp chats will open.</b> Each department receives only its own items. Each seller will be told the value of '+otherWord2+'.';
   } else {
     $('#routeNote').style.display='none';
   }
@@ -2010,7 +2037,7 @@ function renderReviews(){
     $('#revFormWrap').innerHTML='<div style="background:#fff8e0;border:1px solid #f5e2a0;color:#6a5520;font-weight:600;font-size:.9rem;text-align:center;max-width:680px;margin:0 auto 30px;padding:16px 20px;border-radius:12px">Reviews are currently closed. Thank you to everyone who shared their experience!</div>';
   }
 
-  var list=S.reviews.slice().reverse();
+    var list=S.reviews.filter(function(r){ return r.approved !== false; }).reverse();
   if(!list.length){
     $('#revTrack').innerHTML='<div class="rv-slide"><div class="rv-card" style="padding:50px 24px"><h3 style="color:var(--blue);margin-bottom:6px;font-family:var(--fd)">No reviews yet</h3><p style="color:var(--muted)">Be the first to share your experience.</p></div></div>';
     $('#revDots').innerHTML='';
@@ -2071,10 +2098,10 @@ function submitReview(){
   if(!n) return toast('Please enter your name','err');
   if(!window._rvRating) return toast('Please pick a rating','err');
   if(!t) return toast('Please write your review','err');
-  S.reviews.push({id:uid(), name:n, role:role||'', rating:window._rvRating, text:t, date:new Date().toISOString(), photo:window._rvPhoto||null});
+  S.reviews.push({id:uid(), name:n, role:role||'', rating:window._rvRating, text:t, date:new Date().toISOString(), photo:window._rvPhoto||null, approved:false});
   try{ save(); }catch(e){ toast('Storage full — try a smaller photo','err'); return; }
   renderReviews();
-  toast('Thank you for your review!','ok');
+  toast('Thank you! Your review will appear after admin approval.','ok');
 }
 
 /* ========== ORDER / CHECKOUT ========== */
@@ -2089,10 +2116,19 @@ function openCheckout(){
   var destHTML=Object.keys(dests).map(function(num){
     return '<div style="display:flex;justify-content:space-between"><span>To '+esc(num)+'</span><b>'+money(dests[num])+'</b></div>';
   }).join('');
+   var destCount = Object.keys(dests).length;
+  var numWord = destCount===1?'One':(destCount===2?'Two':(destCount===3?'Three':destCount));
+  var otherWord = destCount===2?'the other department\'s items':'the other departments\' items';
+  var noteHTML = '';
+  if(destCount===1){
+    noteHTML = '<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:.8rem;color:#6a5520"><b>Note:</b> '+numWord+' WhatsApp chat will open — for the department handling your order.</div>';
+  } else {
+    noteHTML = '<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:.8rem;color:#6a5520"><b>Note:</b> '+numWord+' WhatsApp chats will open — one for each department. Each seller will be informed about '+otherWord+'.</div>';
+  }
   $('#coSummary').innerHTML='<div style="font-weight:700;color:var(--blue);margin-bottom:6px">Order Summary</div>'
     +'<div style="color:var(--muted);font-size:.83rem;margin-bottom:10px">'+cart.length+' item'+(cart.length>1?'s':'')+' · Total '+money(total)+'</div>'
     +destHTML
-    +(Object.keys(dests).length>1?'<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:.8rem;color:#6a5520"><b>Note:</b> Two WhatsApp chats will open — one for each department. Each seller will be informed about the other department\'s items.</div>':'');
+    +noteHTML;
   $('#modCo').classList.add('on');
 }
 
@@ -2157,59 +2193,17 @@ function placeOrder(){
     });
   });
 
-  // Customer confirmation message
-  if(dests.length>1){
-    var custMsg='*Your Order · Alorma Impact Ventures*\n\nThank you '+n+'! Your order has been split into '+dests.length+' departments and prepared for processing.\n\n';
-    dests.forEach(function(dest,i){
-      var g=groups[dest];
-      var deptNames=Object.keys(g.secNames).join(' + ');
-      custMsg+='*Part '+(i+1)+' — '+deptNames+'*\n';
-      custMsg+='Worth: '+money(g.total)+'\n';
-      g.items.forEach(function(it){
-        custMsg+='• '+it.name+' × '+it.qty+'\n';
-      });
-      custMsg+='\n';
-    });
-    custMsg+='*Grand total:* '+money(grandTotal)+'\n\n';
-    custMsg+='Both departments have been notified about each other\'s items so your order is being handled together.\n\n';
-    custMsg+='If you have any questions, simply reply to this chat.';
-    prepared.push({
-      label: 'Send a copy to me ('+n+')',
-      sub: 'Your order summary · '+ph,
-      url: 'https://wa.me/'+customerPhone+'?text='+encodeURIComponent(custMsg),
-      color: '#0a2540'
-    });
-  } else {
-    var singleDest=dests[0];
-    var g=groups[singleDest];
-    var deptNames=Object.keys(g.secNames).join(' + ');
-    var singleMsg='*Your Order · Alorma Impact Ventures*\n\nThank you '+n+'! Your order has been received.\n\n';
-    singleMsg+='Department: '+deptNames+'\n';
-    g.items.forEach(function(it){ singleMsg+='• '+it.name+' × '+it.qty+' = '+money(it.price*it.qty)+'\n'; });
-    singleMsg+='\n*Total:* '+money(grandTotal)+'\n\n';
-    singleMsg+='We will contact you shortly on '+ph+' to confirm delivery.';
-    prepared.push({
-      label: 'Send a copy to me ('+n+')',
-      sub: 'Your order summary · '+ph,
-      url: 'https://wa.me/'+customerPhone+'?text='+encodeURIComponent(singleMsg),
-      color: '#0a2540'
-    });
-  }
+   // (Customer confirmation message has been removed — only seller chats open)
+   // NOTE: cart is NOT cleared here. It will only be cleared when the user
+  // presses the "Done" button on the Send Your Order modal.
 
-  // Decrease stock and clear cart
-  cart.forEach(function(item){
-    var p=S.products.find(function(x){ return x.id===item.id; });
-    if(p) p.stock=Math.max(0, p.stock-item.qty);
-  });
-  save(); cart=[]; saveCart(); updateCart();
-
-  // Close checkout drawer/modal
+  // Close checkout drawer/modal only (cart stays)
   $('#modCo').classList.remove('on');
   $('#dr').classList.remove('on');
   $('#bd').classList.remove('on');
   document.body.classList.remove('lock');
 
-  // Render the "Send Order" modal with clickable buttons
+  // Render the "Send Your Order" modal with clickable buttons
   $('#sendButtons').innerHTML=prepared.map(function(p,i){
     return '<a class="btn btn-full" href="'+p.url+'" target="_blank" rel="noopener" style="background:'+p.color+';color:#fff;margin-bottom:10px;padding:14px 20px;justify-content:space-between;text-align:left;border-radius:10px;display:flex;align-items:center;gap:10px;font-weight:700">'
       +'<span style="display:flex;flex-direction:column;align-items:flex-start"><span style="font-size:.9rem">'+esc(p.label)+'</span><span style="font-size:.72rem;opacity:.85;font-weight:500;margin-top:2px">'+esc(p.sub)+'</span></span>'
@@ -2217,6 +2211,37 @@ function placeOrder(){
       +'</a>';
   }).join('');
 
+  // 1) Hide "Why do I need to click each button?" when there is only 1 department
+  var sendWhy = $('#sendWhy');
+  if(sendWhy){
+    sendWhy.style.display = dests.length > 1 ? 'block' : 'none';
+  }
+
+  // 2) Always show a dynamic "Done" instruction based on the number of departments
+  var doneNote = $('#sendDoneNote');
+  if(doneNote){
+    var howMany = dests.length;
+    var doneText = '';
+    var stepText = '';
+
+    if(howMany === 1){
+      stepText = 'Step 1: Tap the green button above to send your order on WhatsApp.';
+      doneText = 'Step 2: Only click the <b>"Done"</b> button at the bottom right <b>after</b> you have finished sending your order.';
+    } else if(howMany === 2){
+      stepText = 'Step 1: Tap the <b>two</b> green buttons above to send your order to each department on WhatsApp.';
+      doneText = 'Step 2: Only click the <b>"Done"</b> button at the bottom right <b>after</b> you have submitted the two orders.';
+    } else if(howMany === 3){
+      stepText = 'Step 1: Tap the <b>three</b> green buttons above to send your order to each department on WhatsApp.';
+      doneText = 'Step 2: Only click the <b>"Done"</b> button at the bottom right <b>after</b> you have submitted the three orders.';
+    } else {
+      stepText = 'Step 1: Tap the <b>'+howMany+'</b> green buttons above to send your order to each department on WhatsApp.';
+      doneText = 'Step 2: Only click the <b>"Done"</b> button at the bottom right <b>after</b> you have submitted all '+howMany+' orders.';
+    }
+
+    doneNote.innerHTML = '<div style="margin-bottom:8px">📋 <b>How to complete your order</b></div>'
+      + '<div style="margin-bottom:8px;font-weight:500">' + stepText + '</div>'
+      + '<div style="font-weight:500">' + doneText + '</div>';
+  }
   // Show the modal
   $('#modSend').classList.add('on');
   document.body.classList.add('lock');
@@ -2414,12 +2439,37 @@ function renderAdminReviews(){
   $('#rvStatus').innerHTML=on
     ? '<span style="color:var(--ok)">● Currently accepting new reviews</span>'
     : '<span style="color:var(--danger)">● New reviews are turned OFF</span>';
-  $('#rvCount').textContent=S.reviews.length+' review'+(S.reviews.length===1?'':'s');
-  if(!S.reviews.length){ $('#rvAdmin').innerHTML='<div class="pc" style="text-align:center;color:var(--muted)">No reviews yet.</div>'; return; }
-  $('#rvAdmin').innerHTML=S.reviews.slice().reverse().map(function(r){
+
+  var pending = S.reviews.filter(function(r){ return r.approved === false; });
+  var approved = S.reviews.filter(function(r){ return r.approved !== false; });
+
+  $('#rvCount').textContent = approved.length + ' approved · ' + pending.length + ' pending';
+
+  // Sidebar badge
+  var badge = $('#rvBadge');
+  if(badge){
+    badge.textContent = pending.length;
+    badge.style.display = pending.length > 0 ? 'inline-block' : 'none';
+  }
+
+  if(!pending.length && !approved.length){
+    $('#rvAdmin').innerHTML='<div class="pc" style="text-align:center;color:var(--muted)">No reviews yet.</div>';
+    return;
+  }
+
+  var buildCard = function(r, isPending){
     var initials=(r.name||'?').split(' ').map(function(w){ return w[0]; }).join('').slice(0,2).toUpperCase();
-    var av=r.photo ? '<img src="'+esc(r.photo)+'" style="width:54px;height:54px;border-radius:50%;object-fit:cover;flex:none">' : '<div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(140deg,var(--blue),var(--blue3));color:var(--yellow);display:grid;place-items:center;font-weight:700;font-family:var(--fd);flex:none">'+esc(initials)+'</div>';
-    return '<div class="pc" style="padding:18px">'
+    var av = r.photo
+      ? '<img src="'+esc(r.photo)+'" style="width:54px;height:54px;border-radius:50%;object-fit:cover;flex:none">'
+      : '<div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(140deg,var(--blue),var(--blue3));color:var(--yellow);display:grid;place-items:center;font-weight:700;font-family:var(--fd);flex:none">'+esc(initials)+'</div>';
+    var buttons;
+    if(isPending){
+      buttons = '<button class="btn btn-sm" data-approve="'+esc(r.id)+'" style="background:#0f7a4f;color:#fff;border-color:#0f7a4f;padding:8px 16px;font-weight:700">✓ Approve</button>'
+              + '<button class="btn btn-ghost btn-sm" data-reject="'+esc(r.id)+'" style="color:var(--danger);border-color:#f4cdc9;margin-left:8px">✕ Reject</button>';
+    } else {
+      buttons = '<button class="btn btn-ghost btn-sm" data-rvd="'+esc(r.id)+'" style="color:var(--danger);border-color:#f4cdc9">Delete</button>';
+    }
+    return '<div style="border-bottom:1px solid var(--line);padding:16px 0">'
       +'<div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:12px">'
       +av
       +'<div style="flex:1;min-width:0">'
@@ -2431,10 +2481,32 @@ function renderAdminReviews(){
       +'<div class="fld" style="margin:0"><label style="font-size:.72rem">Rating (1–5)</label><input type="number" min="1" max="5" data-rvr="'+esc(r.id)+'" value="'+r.rating+'" style="padding:8px 11px;font-size:.83rem"></div>'
       +'<div class="fld" style="margin:0"><label style="font-size:.72rem">Date</label><input value="'+new Date(r.date).toLocaleDateString()+'" disabled style="padding:8px 11px;font-size:.83rem;background:#f8fafc"></div>'
       +'</div>'
-      +'<div class="fld" style="margin:0 0 8px"><label style="font-size:.72rem">Review Text</label><textarea data-rvt="'+esc(r.id)+'" style="padding:8px 11px;font-size:.83rem;min-height:60px">'+esc(r.text)+'</textarea></div>'
-      +'<div style="text-align:right"><button class="btn btn-ghost btn-sm" data-rvd="'+esc(r.id)+'" style="color:var(--danger);border-color:#f4cdc9">Delete</button></div>'
+      +'<div class="fld" style="margin:0 0 12px"><label style="font-size:.72rem">Review Text</label><textarea data-rvt="'+esc(r.id)+'" style="padding:8px 11px;font-size:.83rem;min-height:60px">'+esc(r.text)+'</textarea></div>'
+      +'<div style="text-align:right">'+buttons+'</div>'
       +'</div></div></div>';
-  }).join('');
+  };
+
+  var html='';
+
+  if(pending.length){
+    html+='<div class="pc" style="border:1px solid #f0d98a;background:#fffdf5">'
+      +'<h3 style="color:#8f6408;display:flex;align-items:center;gap:8px;margin-bottom:6px">⏳ Pending Approval <span style="background:#fff8e0;color:#8f6408;padding:2px 10px;border-radius:999px;font-size:.72rem;font-weight:800">'+pending.length+'</span></h3>'
+      +'<p class="hint" style="color:#8f6408">These reviews are waiting for your decision. They are <b>NOT visible</b> on the website yet.</p>'
+      +'<div>'+pending.slice().reverse().map(function(r){ return buildCard(r, true); }).join('')+'</div>'
+      +'</div>';
+  }
+
+  if(approved.length){
+    html+='<div class="pc">'
+      +'<h3 style="color:var(--ok);display:flex;align-items:center;gap:8px;margin-bottom:6px">✓ Approved <span style="background:#e6f5ef;color:var(--ok);padding:2px 10px;border-radius:999px;font-size:.72rem;font-weight:800">'+approved.length+'</span></h3>'
+      +'<p class="hint">These reviews are live on your website. Edit them freely — changes save instantly.</p>'
+      +'<div>'+approved.slice().reverse().map(function(r){ return buildCard(r, false); }).join('')+'</div>'
+      +'</div>';
+  }
+
+  $('#rvAdmin').innerHTML=html;
+
+  // Live-edit handler
   $('#rvAdmin').oninput=function(e){
     var t=e.target;
     var id=t.dataset.rvn||t.dataset.rvro||t.dataset.rvr||t.dataset.rvt;
@@ -2446,14 +2518,32 @@ function renderAdminReviews(){
     if(t.dataset.rvt) r.text=t.value;
     save(); renderReviews();
   };
+
+  // Button handler
   $('#rvAdmin').onclick=function(e){
-    var d=e.target.closest('[data-rvd]'); if(!d) return;
-    if(!confirm('Delete this review?')) return;
-    S.reviews=S.reviews.filter(function(x){ return x.id!==d.dataset.rvd; });
-    save(); renderReviews(); renderAdminReviews(); toast('Review deleted','ok');
+    var ap=e.target.closest('[data-approve]');
+    var rj=e.target.closest('[data-reject]');
+    var dl=e.target.closest('[data-rvd]');
+
+    if(ap){
+      var r=S.reviews.find(function(x){ return x.id===ap.dataset.approve; });
+      if(r){ r.approved=true; save(); renderReviews(); renderAdminReviews(); toast('Review approved — now live on the site','ok'); }
+      return;
+    }
+    if(rj){
+      if(!confirm('Reject and permanently delete this review?')) return;
+      S.reviews=S.reviews.filter(function(x){ return x.id!==rj.dataset.reject; });
+      save(); renderReviews(); renderAdminReviews(); toast('Review rejected and removed','ok');
+      return;
+    }
+    if(dl){
+      if(!confirm('Delete this review?')) return;
+      S.reviews=S.reviews.filter(function(x){ return x.id!==dl.dataset.rvd; });
+      save(); renderReviews(); renderAdminReviews(); toast('Review deleted','ok');
+      return;
+    }
   };
 }
-
 /* ========== PAGE TEXT ADMIN ========== */
 function renderPageText(){
   var s=S.settings;
@@ -2681,7 +2771,9 @@ function importBackup(file){
 function fillAdminSettings(){
   var s=S.settings;
   $('#sb').value=s.brand; $('#ss').value=s.tagline;
+  var mu=$('#mapUrlInput'); if(mu) mu.value = s.mapUrl || '';
   $('#spFurn').value=s.phoneFurniture; $('#spLife').value=s.phoneLifestyle;
+  var pf=$('#spFashion'); if(pf) pf.value=s.phoneFashion||'0598649333';
   $('#se').value=s.email; $('#sa').value=s.address;
   $('#su').value=S.admin.user; $('#spw').value=S.admin.pass;
   $('#h1l').value=s.hours[0]?s.hours[0].l:''; $('#h1t').value=s.hours[0]?s.hours[0].t:'';
@@ -2929,8 +3021,10 @@ function bind(){
     s.tagline=$('#ss').value||'Furniture · Appliances · Fashion';
     s.phoneFurniture=$('#spFurn').value;
     s.phoneLifestyle=$('#spLife').value;
+    s.phoneFashion=$('#spFashion') ? $('#spFashion').value : '0598649333';
     s.email=$('#se').value;
     s.address=$('#sa').value;
+    s.mapUrl=$('#mapUrlInput') ? $('#mapUrlInput').value.trim() : '';   
     s.hours=[
       {l:$('#h1l').value, t:$('#h1t').value},
       {l:$('#h2l').value, t:$('#h2t').value},
@@ -3021,14 +3115,26 @@ function bind(){
     }
   });
 
-  // Send Order modal controls
-  function closeSend(){
+    // Send Order modal controls
+  function closeSendModal(){
     $('#modSend').classList.remove('on');
     document.body.classList.remove('lock');
   }
-  $('#sendClose').addEventListener('click',closeSend);
-  $('#sendDone').addEventListener('click',closeSend);
-  $('#modSend').addEventListener('click',function(e){ if(e.target.id==='modSend') closeSend(); });
+  function finalizeOrder(){
+    // Decrease stock and clear cart — happens ONLY when Done is pressed
+    cart.forEach(function(item){
+      var p=S.products.find(function(x){ return x.id===item.id; });
+      if(p) p.stock=Math.max(0, p.stock-item.qty);
+    });
+    cart=[];
+    save(); saveCart(); updateCart();
+    closeSendModal();
+    renderProducts();
+    toast('Order sent — cart cleared','ok');
+  }
+  $('#sendClose').addEventListener('click',closeSendModal);
+  $('#sendDone').addEventListener('click',finalizeOrder);
+  $('#modSend').addEventListener('click',function(e){ if(e.target.id==='modSend') closeSendModal(); });
   // Backup
   $('#bkExport').addEventListener('click',exportBackup);
   $('#bkImport').addEventListener('change',function(e){
