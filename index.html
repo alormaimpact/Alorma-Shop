@@ -976,6 +976,18 @@ tr:hover td{background:#f8fafc}
           </div>
         </div>
 
+          <div class="pc">
+          <h3>Products Browse Section</h3>
+          <p class="hint">Turn OFF to hide the entire "Browse / All Products" section on the homepage — including the heading, search bar, category filters and product grid. Useful when you're updating products or want visitors to only see the 3 main departments.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 16px;background:#f8fafc;border:1.5px solid var(--line);border-radius:10px">
+            <div>
+              <div style="font-weight:700;color:var(--blue);font-size:.9rem">Show Products Section</div>
+              <div style="font-size:.78rem;color:var(--muted);margin-top:2px">When OFF, visitors will not see the shop grid.</div>
+            </div>
+            <label class="sw"><input type="checkbox" id="showProductsToggle"><span class="sl"></span></label>
+          </div>
+        </div>
+
         <div class="pc">
           <h3>Working Hours</h3>
           <div class="sg">
@@ -1346,6 +1358,7 @@ function def(){
       logo:null,
       shopPhotos:[],
       reviewsEnabled:true,
+      showProducts:true,
       why:[
         {t:'Trusted Family Business',d:'Owned and run by a family who genuinely care about every customer.'},
         {t:'Wholesale & Retail',d:'Special pricing for hotels, offices, resellers and bulk buyers.'},
@@ -1608,6 +1621,26 @@ function applySite(){
   $('#fa').textContent=s.address;
   $('#yr').textContent=new Date().getFullYear();
   renderLogo();renderHours();renderSocis();renderWhy();renderSections();renderShopCarousel();renderProducts();renderReviews();renderFootSections();
+
+  // ── Browse All Products section visibility ──
+  // When "showProducts" is OFF, we hide the products section ONLY on initial load
+  // (currentSec === 'all' means the visitor hasn't picked a department yet).
+  // As soon as they click a department card, setActiveSection() will reveal it.
+  var prodSection = document.getElementById('products');
+  if(prodSection){
+    if(s.showProducts === false && currentSec === 'all'){
+      prodSection.style.display = 'none';
+    } else {
+      prodSection.style.display = '';
+    }
+  }
+
+  // Hide the "Shop" nav link when the browse toggle is OFF
+  document.querySelectorAll('.nav a').forEach(function(a){
+    if(a.getAttribute('href') === '#products'){
+      a.style.display = (s.showProducts === false) ? 'none' : '';
+    }
+  });
 }
 
 function renderHours(){
@@ -1702,21 +1735,28 @@ function startScAuto(){ stopScAuto(); scTimer=setInterval(function(){ if(scTotal
 function stopScAuto(){ if(scTimer){ clearInterval(scTimer); scTimer=null; } }
 
 function setActiveSection(id){
-  currentSec=id;
-  currentCat='All';
+  currentSec = id;
+  currentCat = 'All';
   renderProducts();
-  var section=getSection(id);
+
+  var section = getSection(id);
   if(section){
-    $('#prodEyebrow').textContent=section.name;
-    $('#prodTitle').textContent=section.name;
-    $('#prodSub').textContent=section.tagline||section.desc||'';
+    $('#prodEyebrow').textContent = section.name;
+    $('#prodTitle').textContent = section.name;
+    $('#prodSub').textContent = section.tagline || section.desc || '';
   } else {
-    $('#prodEyebrow').textContent='Browse';
-    $('#prodTitle').textContent='All Products';
-    $('#prodSub').textContent='Every item from all three divisions';
+    $('#prodEyebrow').textContent = 'Browse';
+    $('#prodTitle').textContent = 'All Products';
+    $('#prodSub').textContent = 'Every item from all three divisions';
   }
-  var t=$('#products');
-  if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+
+  // ALWAYS reveal the products section when a department is clicked.
+  // This is what makes the toggle work: hiding it only affects the initial view.
+  var prodSection = document.getElementById('products');
+  if(prodSection) prodSection.style.display = '';
+
+  // Then scroll to it
+  if(prodSection) prodSection.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function renderFilters(){
   var list=['All'];
@@ -1725,6 +1765,12 @@ function renderFilters(){
   secs.forEach(function(sc){
     (sc.categories||[]).forEach(function(c){ if(!seen[c]){ seen[c]=true; list.push(c); } });
   });
+
+  // If "Show All Products" is OFF, remove the "All" chip — visitors must pick a department
+  if(S.settings.showProducts === false){
+    list = list.filter(function(c){ return c !== 'All'; });
+  }
+
   if(currentCat!=='All' && list.indexOf(currentCat)===-1) currentCat='All';
   $('#filters').innerHTML=list.map(function(c){
     return '<button class="chip'+(c===currentCat?' on':'')+'" data-cat="'+esc(c)+'">'+esc(c)+'</button>';
@@ -2772,6 +2818,7 @@ function fillAdminSettings(){
   var s=S.settings;
   $('#sb').value=s.brand; $('#ss').value=s.tagline;
   var mu=$('#mapUrlInput'); if(mu) mu.value = s.mapUrl || '';
+  var spt=$('#showProductsToggle'); if(spt) spt.checked = (s.showProducts !== false);
   $('#spFurn').value=s.phoneFurniture; $('#spLife').value=s.phoneLifestyle;
   var pf=$('#spFashion'); if(pf) pf.value=s.phoneFashion||'0598649333';
   $('#se').value=s.email; $('#sa').value=s.address;
@@ -3024,7 +3071,8 @@ function bind(){
     s.phoneFashion=$('#spFashion') ? $('#spFashion').value : '0598649333';
     s.email=$('#se').value;
     s.address=$('#sa').value;
-    s.mapUrl=$('#mapUrlInput') ? $('#mapUrlInput').value.trim() : '';   
+    s.mapUrl=$('#mapUrlInput') ? $('#mapUrlInput').value.trim() : '';
+    s.showProducts=$('#showProductsToggle') ? $('#showProductsToggle').checked : true; 
     s.hours=[
       {l:$('#h1l').value, t:$('#h1t').value},
       {l:$('#h2l').value, t:$('#h2t').value},
